@@ -18,7 +18,7 @@ class CreateLoginsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->string('ip',45);
+            $table->string('login_from');
             $table->timestamps();
             $table->enum('status',['1','0']);
             $table->rememberToken();
