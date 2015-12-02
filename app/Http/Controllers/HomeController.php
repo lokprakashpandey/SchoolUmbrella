@@ -82,4 +82,8 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function register(){
+        return view('register');
+    }
 }

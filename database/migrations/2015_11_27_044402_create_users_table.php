@@ -19,8 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('lname')->nullable();
             $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->string('password', 60);
             $table->enum('gender',['f','m','o']);
+            $table->string('password', 60);
             $table->string('ip');
             $table->integer('user_typeId')->unsigned();
             $table->foreign('user_typeId')->references('id')->on('user_types');
