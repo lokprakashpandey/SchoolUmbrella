@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
+use Auth; // Auth class is in root location
 
 class HomeController extends Controller
 {
@@ -24,9 +26,21 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $user= new User;
+        $user->fname = $request['fname'];
+        $user->mname = $request['mname'];
+        $user->lname = $request['name'];
+        $user->username = $request['username'];
+        $user->email = $request['email'];
+        $user->gender = $request['gender'];
+        $user->password = bcrypt($request['password']);
+        $user->ip= $request->ip();
+        $user->user_typeId= $request['user_typeId'];
+        $user->save();
+        return $user;
+        
     }
 
     /**
@@ -85,5 +99,20 @@ class HomeController extends Controller
 
     public function register(){
         return view('register');
+    }
+
+    public function login(){
+        return view('login');
+    }
+
+    public function authenticate(Request $request){
+        // Auth::attempt() is used for authenticating; attempt()is method of class Auth
+        if(Auth::attempt(['username'=>$request['username'], 'password'=>$request['password']])){
+            //return Auth::user(); // Auth::user() where user() is built-in methode
+            return redirect(''); // Redirect into index page
+        }
+        else{
+            return "Invalid Username or Password";
+        }
     }
 }

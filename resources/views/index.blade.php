@@ -3,7 +3,7 @@
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Home | Nova</title>
+    <title>SchoolUmbrella</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -57,9 +57,16 @@
                                 </li>
                                 <li><a href="blog.html">Blog</a></li> 
                                 <li><a href="contact-us.html">Contact</a></li>
-                                <li class="login">
-                                    <a data-toggle="modal" href="#loginForm"><i class="icon-lock"></i></a>
-                                </li>
+                                @if(Auth::check())
+                                    <li class="login">
+                                    <a data-toggle="modal" href="{{url('auth/logout')}}"><i class="icon-lock"></i></a>
+                                    </li>
+                                    @else
+                                    <li class="login">
+                                    <a data-toggle="modal" href="{{url('login')}}"><i class="icon-lock"></i></a>
+                                    </li>
+                                @endif
+                                
                             </ul>        
                         </div><!--/.nav-collapse -->
                     </div>

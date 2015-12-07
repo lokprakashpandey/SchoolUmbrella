@@ -20,7 +20,8 @@
 
 
 	  <section id="registration-page" class="container">
-	    <form class="center" action='' method="POST">
+	    <!-- <form class="center" action='' method="POST"> -->
+	    {!!Form::open(array('url'=>'register','method'=>'post','class'=>'center'))!!}
 	      <fieldset class="registration-form">
 	      	
 	      	<div class="control-group">
@@ -68,6 +69,19 @@
 	        </div>
 
 	        <div class="control-group">
+	          <!-- Member Type-->
+	          <div class="controls">
+	          <label>User Type</label>
+	            <select name="user_typeId" class="input-xlarge"> 
+	            	<option value="1">Student</option>
+	            	<option value="2">Parent</option>
+	            	<option value="3">Teacher</option>
+	            	<option value="4">Organization</option>
+	            </select> 
+	          </div>
+	        </div>
+
+	        <div class="control-group">
 	          <!-- Password-->
 	          <div class="controls">
 	            <input type="password" name="password" placeholder="Password" class="input-xlarge">
@@ -88,7 +102,8 @@
 	          </div>
 	        </div>
 	      </fieldset>
-	    </form>
+	    <!-- </form> -->
+	    {!!Form::close()!!}
 	  </section>
 	  <!-- /#registration-page -->
 @endsection

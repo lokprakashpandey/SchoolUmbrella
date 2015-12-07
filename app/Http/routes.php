@@ -13,3 +13,9 @@
 
 Route::get('/','HomeController@index');
 Route::get('/register','HomeController@register');
+Route::post('/register','HomeController@create');
+Route::get('/login','HomeController@login');
+Route::post('/login','HomeController@authenticate');
+Route::controllers([
+		'auth' => 'Auth\AuthController',
+		]);
