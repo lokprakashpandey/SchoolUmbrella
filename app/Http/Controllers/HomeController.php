@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -24,9 +26,20 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $user = new User();
+        $user->fname = $request['fname'];
+        $user->mname = $request['mname'];
+        $user->lname = $request['lname'];
+        $user->username = $request['username'];
+        $user->email = $request['email'];
+        $user->gender = $request['gender'];
+        $user->password = bcrypt($request['password']);
+        $user->ip = $request->ip();
+        $user->user_typeId = $request['usertype'];
+        $user->save();
+        return $request;
     }
 
     /**
@@ -81,5 +94,23 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function register()
+    {
+        return view('register');
+    }
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function authenticate(Request $request)
+    {
+        if(Auth::attempt(['username' => $request['username'],'password'=>$request['password']]))
+            return redirect(''); //home ko index ma pugauchha
+        else
+            return "Invalid username or password";
     }
 }

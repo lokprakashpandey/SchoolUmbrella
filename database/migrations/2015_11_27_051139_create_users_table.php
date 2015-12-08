@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('ip');
             $table->integer('user_typeId')->unsigned();
             $table->foreign('user_typeId')->references('id')->on('user_types');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
