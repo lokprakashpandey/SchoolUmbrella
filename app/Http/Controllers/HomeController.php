@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+<<<<<<< HEAD
 use Auth;
+=======
+use Auth; // Auth class is in root location
+>>>>>>> master
 
 class HomeController extends Controller
 {
@@ -28,18 +32,33 @@ class HomeController extends Controller
      */
     public function create(Request $request)
     {
+<<<<<<< HEAD
         $user = new User();
         $user->fname = $request['fname'];
         $user->mname = $request['mname'];
         $user->lname = $request['lname'];
+=======
+        $user= new User;
+        $user->fname = $request['fname'];
+        $user->mname = $request['mname'];
+        $user->lname = $request['name'];
+>>>>>>> master
         $user->username = $request['username'];
         $user->email = $request['email'];
         $user->gender = $request['gender'];
         $user->password = bcrypt($request['password']);
+<<<<<<< HEAD
         $user->ip = $request->ip();
         $user->user_typeId = $request['usertype'];
         $user->save();
         return $request;
+=======
+        $user->ip= $request->ip();
+        $user->user_typeId= $request['user_typeId'];
+        $user->save();
+        return $user;
+        
+>>>>>>> master
     }
 
     /**
@@ -96,6 +115,7 @@ class HomeController extends Controller
         //
     }
 
+<<<<<<< HEAD
     public function register()
     {
         return view('register');
@@ -114,3 +134,24 @@ class HomeController extends Controller
             return "Invalid username or password";
     }
 }
+=======
+    public function register(){
+        return view('register');
+    }
+
+    public function login(){
+        return view('login');
+    }
+
+    public function authenticate(Request $request){
+        // Auth::attempt() is used for authenticating; attempt()is method of class Auth
+        if(Auth::attempt(['username'=>$request['username'], 'password'=>$request['password']])){
+            //return Auth::user(); // Auth::user() where user() is built-in methode
+            return redirect(''); // Redirect into index page
+        }
+        else{
+            return "Invalid Username or Password";
+        }
+    }
+}
+>>>>>>> master

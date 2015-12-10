@@ -13,6 +13,7 @@
 
 Route::get('/','HomeController@index');
 Route::get('/register','HomeController@register');
+<<<<<<< HEAD
 //href bata jati pani janchha tyo get bata janchha
 Route::post('/register','HomeController@create');
 Route::get('/login','HomeController@login');
@@ -20,3 +21,11 @@ Route::post('login','HomeController@authenticate');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	]);
+=======
+Route::post('/register','HomeController@create');
+Route::get('/login','HomeController@login');
+Route::post('/login','HomeController@authenticate');
+Route::controllers([
+		'auth' => 'Auth\AuthController',
+		]);
+>>>>>>> master
