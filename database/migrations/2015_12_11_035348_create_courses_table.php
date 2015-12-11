@@ -12,10 +12,14 @@ class CreateCoursesTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('courses');
         Schema::create('courses', function(Blueprint $table){
             $table->increments('id');
             $table->string('name');
-            //$table->
+            $table->integer('streamId')->unsigned();
+            $table->foreign('streamId')->references('id')->on('streams');
+            $table->integer('levelId')->unsigned();
+            $table->foreign('levelId')->references('id')->on('levels');
         });
     }
 
