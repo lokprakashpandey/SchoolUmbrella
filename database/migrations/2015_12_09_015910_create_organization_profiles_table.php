@@ -19,7 +19,7 @@ class CreateOrganizationProfilesTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->longText('description');
-            $table->string('brichure');
+            $table->string('brochure');
             $table->timestamps();
         });
     }
