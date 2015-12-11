@@ -6,14 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'CreateAffiliatesTable' => $baseDir . '/database/migrations/2015_12_11_031419_create_affiliates_table.php',
+    'CreateCountriesTable' => $baseDir . '/database/migrations/2015_12_11_030644_create_countries_table.php',
     'CreateCoursesTable' => $baseDir . '/database/migrations/2015_12_10_051036_create_courses_table.php',
     'CreateLevelsTable' => $baseDir . '/database/migrations/2015_12_10_050420_create_levels_table.php',
     'CreateLoginsTable' => $baseDir . '/database/migrations/2015_12_01_025551_create_logins_table.php',
     'CreateOrganizationProfilesTable' => $baseDir . '/database/migrations/2015_12_09_015910_create_organization_profiles_table.php',
-    'CreateParentProfileTable' => $baseDir . '/database/migrations/2015_12_09_020015_create_parent_profiles_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreateStudentProfileTable' => $baseDir . '/database/migrations/2015_12_09_015948_create_student_profiles_table.php',
-    'CreateTeacherProfileTable' => $baseDir . '/database/migrations/2015_12_09_015930_create_teacher_profiles_table.php',
     'CreateUserTypesTable' => $baseDir . '/database/migrations/2015_11_27_035207_create_user_types_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2015_11_27_044402_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
