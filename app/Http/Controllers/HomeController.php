@@ -31,7 +31,7 @@ class HomeController extends Controller
         $user= new User;
         $user->fname = $request['fname'];
         $user->mname = $request['mname'];
-        $user->lname = $request['name'];
+        $user->lname = $request['lname'];
         $user->username = $request['username'];
         $user->email = $request['email'];
         $user->gender = $request['gender'];
