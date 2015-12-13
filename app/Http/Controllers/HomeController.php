@@ -109,7 +109,7 @@ class HomeController extends Controller
         // Auth::attempt() is used for authenticating; attempt()is method of class Auth
         if(Auth::attempt(['username'=>$request['username'], 'password'=>$request['password']])){
             //return Auth::user(); // Auth::user() where user() is built-in methode
-            if(Auth::user()->user_typeId == 4){
+            if(Auth::user()->user_typeId == 5){
                 return redirect('organization'); //Redirect into  Organization page
             }
             return redirect(''); // Redirect into index page
@@ -119,7 +119,4 @@ class HomeController extends Controller
         }
     }
 
-    public function organization(){
-        return view('organization'); //Returns view blade organization.blade.php
-    }
 }
