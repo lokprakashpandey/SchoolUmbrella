@@ -16,7 +16,7 @@ class ParentController extends Controller
      */
     public function index()
     {
-        $parent = Parent::where('userId',Auth::user()->id);
+        $parent = Parent::where('userId',Auth::user()->id)->first();
         return view('parent')->with('parent',$parent);
     }
 

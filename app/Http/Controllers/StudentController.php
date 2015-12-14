@@ -16,7 +16,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::where('userId',Auth::user()->id);
+        $student = Student::where('userId',Auth::user()->id)->first();
         return view('student')->with('student',$student);
     }
 
