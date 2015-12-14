@@ -110,7 +110,6 @@ class HomeController extends Controller
         if(Auth::attempt(['username'=>$request['username'], 'password'=>$request['password']])){
             //return Auth::user(); // Auth::user() where user() is built-in methode
 
-            
             if (Auth::user()->user_typeId == 1)
                 return redirect('admin'); //Redirects into Admin Route
 
@@ -120,8 +119,9 @@ class HomeController extends Controller
             }
             return redirect(''); // Redirects into index page/Route
         }
-        else{
-            return "Invalid Username or Password";
+        else {
+            \Session::flash('error_message','Invalid username and/or password');
+            return redirect('login');
         }
     }
 

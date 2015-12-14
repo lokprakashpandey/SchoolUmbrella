@@ -20,12 +20,17 @@
 
 
 	  <section id="registration-page" class="container">
-	    <!-- <form class="center" action='' method="POST"> -->
+	    
+		<!-- for getting error message through session -->
+		@if(session('error_message'))
+		{{session('error_message')}}
+		@endif
+		<!-- end of error message through session -->
+
+		<!-- <form class="center" action='' method="POST"> -->
 	    {!!Form::open(array('url'=>'login','method'=>'post','class'=>'center'))!!}
 	      <fieldset class="registration-form">
 	      	
-	      	
-
 	        
 	        <div class="control-group">
 	          <!-- Username -->

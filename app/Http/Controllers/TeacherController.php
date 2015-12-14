@@ -16,7 +16,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teacher = Teacher::where('userId',Auth::user()->id);
+        $teacher = Teacher::where('userId',Auth::user()->id)->first();
         return view('teacher')->with('teacher',$teacher);
     }
 
