@@ -18,7 +18,7 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        $organization = Organization::where('userId',Auth::user()->id)->first();
+        $organization = Organization::where('userId', Auth::user()->id)->first();
         return view('organization')->with('organization',$organization);
     }
 
