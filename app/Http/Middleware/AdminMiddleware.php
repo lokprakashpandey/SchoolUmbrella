@@ -4,9 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-use Auth;
-
-class OrganizationMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,17 +15,10 @@ class OrganizationMiddleware
      */
     public function handle($request, Closure $next)
     {
-
-
-        if(Auth::check() && (Auth::user()->user_typeId == 5)){
-            return $next($request);
+        if(Auth::check() && Auth::user()->user_typeId == 1) {
+                return $next($request);
         }
-
-        else{
+        else
             return redirect('');
-        }
-        
-
-
     }
 }

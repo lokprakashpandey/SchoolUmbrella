@@ -73,10 +73,10 @@
 	          <div class="controls">
 	          <label>User Type</label>
 	            <select name="user_typeId" class="input-xlarge"> 
-	            	<option value="1">Student</option>
-	            	<option value="2">Parent</option>
-	            	<option value="3">Teacher</option>
-	            	<option value="4">Organization</option>
+	            	<option value="2">Student</option>
+	            	<option value="3">Parent</option>
+	            	<option value="4">Teacher</option>
+	            	<option value="5">Organization</option>
 	            </select> 
 	          </div>
 	        </div>

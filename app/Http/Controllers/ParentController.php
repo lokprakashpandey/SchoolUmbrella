@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Organization;
-use Auth;
-class OrganizationController extends Controller
+
+class ParentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +16,8 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-
-        $organization = Organization::where('userId',Auth::user()->id)->first();
-
-=======
-        $organization = Organization::where('userId', Auth::user()->id)->first();
->>>>>>> veeruSKY
-        return view('organization')->with('organization',$organization);
+        $parent = Parent::where('userId',Auth::user()->id);
+        return view('parent')->with('parent',$parent);
     }
 
     /**
