@@ -39,7 +39,7 @@ class HomeController extends Controller
         $user->ip= $request->ip();
         $user->user_typeId= $request['user_typeId'];
         $user->save();
-        return $user;
+        return redirect('');
         
     }
 

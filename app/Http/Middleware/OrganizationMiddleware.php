@@ -16,10 +16,15 @@ class OrganizationMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->user_typeId == 5) {
-                return $next($request);
+
+        if(Auth::check() && (Auth::user()->user_typeId == 5)){
+            return $next($request);
         }
-        else
+
+        else{
             return redirect('');
+        }
+        
+
     }
 }

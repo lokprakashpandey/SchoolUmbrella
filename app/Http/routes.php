@@ -20,24 +20,26 @@ Route::post('/login','HomeController@authenticate');
 Route::get('admin','HomeController@admin');
 
 
+
 Route::group(['middleware'=>'organization'], function(){
-Route::get('organization','OrganizationController@index');	
+	Route::get('organization','OrganizationController@index');	
 });
 
 Route::group(['middleware'=>'parent'], function(){
-Route::get('parent','ParentController@index');	
+	Route::get('parent','ParentController@index');	
 });
 
 Route::group(['middleware'=>'student'], function(){
-Route::get('student','StudentController@index');	
+	Route::get('student','StudentController@index');	
 });
 
 Route::group(['middleware'=>'teacher'], function(){
-Route::get('teacher','TeacherController@index');	
+	Route::get('teacher','TeacherController@index');	
 });
 
 Route::group(['middleware'=>'admin'], function(){
-Route::get('admin','AdminController@index');	
+	Route::get('admin','AdminController@index');	
+
 });
 Route::controllers([
 		'auth' => 'Auth\AuthController',

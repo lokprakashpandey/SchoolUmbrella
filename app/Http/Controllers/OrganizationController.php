@@ -17,9 +17,13 @@ class OrganizationController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 
         $organization = Organization::where('userId',Auth::user()->id)->first();
 
+=======
+        $organization = Organization::where('userId', Auth::user()->id)->first();
+>>>>>>> veeruSKY
         return view('organization')->with('organization',$organization);
     }
 
