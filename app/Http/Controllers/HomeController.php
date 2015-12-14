@@ -119,8 +119,8 @@ class HomeController extends Controller
             }
             return redirect(''); // Redirects into index page/Route
         }
-        else {
-            \Session::flash('error_message','Invalid username and/or password');
+        else{
+            \Session::flash('error_message','Invalid Username and/or Password');
             return redirect('login');
         }
     }
