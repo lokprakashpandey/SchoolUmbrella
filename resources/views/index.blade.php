@@ -7,13 +7,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
+    {!!Html::style('css/bootstrap.min.css')!!}
+    {!!Html::style('css/bootstrap-responsive.min.css')!!}
+    {!!Html::style('css/font-awesome.min.css')!!}
+    {!!Html::style('css/main.css')!!}
+    {!!Html::style('css/sl-slide.css')!!}
+    <!-- yasari laravel ma css haru load garne
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
-
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    -->
+    {!!Html::script('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')!!}
+    <!--<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
