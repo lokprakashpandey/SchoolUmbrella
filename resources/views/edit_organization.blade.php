@@ -20,6 +20,10 @@
 	  <!-- / .title -->
 
 <section id="registration-page" class="container">
+
+	@if(session('success_message'))
+	  	{{session('success_message')}}
+	  @endif
 	    <!-- <form class="center" action='' method="POST"> -->
 	    {!!Form::open(array('url'=>'register','method'=>'post','class'=>'center'))!!}
 	      <fieldset class="registration-form">

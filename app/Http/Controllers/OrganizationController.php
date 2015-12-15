@@ -71,9 +71,16 @@ class OrganizationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+           $organization = Organization::where('userId',Auth::user()->id)->first();
+           $organization->name = $request['name'];
+           $organization->address = $request['address'];
+           $organization->description = $request['description'];
+           $organization->brochure = $request['brochure'];
+           $organization->save();
+           \Session::flash('success_message','Your record has been updated');
+           return redirect('organization/edit');
     }
 
     /**

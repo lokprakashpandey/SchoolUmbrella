@@ -23,7 +23,8 @@ Route::get('admin','HomeController@admin');
 
 Route::group(['middleware'=>'organization'], function(){
 	Route::get('organization','OrganizationController@index');
-	Route::get('organization/edit','OrganizationController@edit');		
+	Route::get('organization/edit','OrganizationController@edit');
+	Route::post('organization/edit','OrganizationController@update');		
 });
 
 Route::group(['middleware'=>'parent'], function(){
