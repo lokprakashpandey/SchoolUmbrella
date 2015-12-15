@@ -23,7 +23,8 @@ Route::get('admin','HomeController@admin');
 
 
 Route::group(['middleware'=>'organization'], function(){
-	Route::get('organization','OrganizationController@index');	
+	Route::get('organization','OrganizationController@index');
+	Route::get('organization/edit','OrganizationController@edit');		
 });
 
 Route::group(['middleware'=>'parent'], function(){
@@ -46,4 +47,3 @@ Route::group(['middleware'=>'admin'], function(){
 Route::controllers([
 		'auth' => 'Auth\AuthController',
 		]);
-

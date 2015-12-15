@@ -16,7 +16,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $admin = Admin::where('userId',Auth::user()->id)->first();
+        return view('admin')->with('admin',$admin);
     }
 
     /**
