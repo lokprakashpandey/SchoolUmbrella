@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
+    {!!Html::script('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')!!}
+    
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
@@ -242,12 +242,13 @@
             <!--/Modal Body-->
         </div>
 
-    <script src="js/vendor/jquery-1.9.1.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    {!!Html::script('js/vendor/jquery-1.9.1.min.js')!!}
+    {!!Html::script('js/vendor/bootstrap.min.js')!!}
+    {!!Html::script('js/main.js')!!}
+    
     <!-- Required javascript files for Slider -->
-    <script src="js/jquery.ba-cond.min.js"></script>
-    <script src="js/jquery.slitslider.js"></script>
+    {!!Html::script('js/jquery.ba-cond.min.js')!!}
+    {!!Html::script('js/jquery.slitslider.js')!!}
     <!-- /Required javascript files for Slider -->
 
     <!-- SL Slider -->
