@@ -20,6 +20,16 @@
 
 
 	<section id="about-us" class="container main">
+
+          <div class="row-fluid">
+            <div class="span9">
+                <!-- This div is used for empty space -->
+            </div>
+            <div class="span3">
+                <a class="btn btn-success btn-large pull-right" href="{{url('organization/edit')}}">Edit Profile</a>
+            </div>
+          </div>
+
         <div class="row-fluid">
             <div class="span6">
                 <h2>What we are</h2>
