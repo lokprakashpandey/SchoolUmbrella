@@ -29,8 +29,6 @@
 	    {!!Form::open(array('url'=>'login','method'=>'post','class'=>'center'))!!}
 	      <fieldset class="registration-form">
 	      	
-	      	
-
 	        
 	        <div class="control-group">
 	          <!-- Username -->

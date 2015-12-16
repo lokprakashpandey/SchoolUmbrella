@@ -110,7 +110,6 @@ class HomeController extends Controller
         if(Auth::attempt(['username'=>$request['username'], 'password'=>$request['password']])){
             //return Auth::user(); // Auth::user() where user() is built-in methode
 
-            
             if (Auth::user()->user_typeId == 1)
                 return redirect('admin'); //Redirects into Admin Route
 
