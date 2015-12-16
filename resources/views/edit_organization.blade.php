@@ -25,7 +25,7 @@
 	  	{{session('success_message')}}
 	  @endif
 	    <!-- <form class="center" action='' method="POST"> -->
-	    {!!Form::open(array('url'=>'register','method'=>'post','class'=>'center'))!!}
+	    {!!Form::open(array('url'=>'organization/edit','method'=>'post','class'=>'center'))!!}
 	      <fieldset class="registration-form">
 	      	
 	      	<div class="control-group">
@@ -56,6 +56,14 @@
 	            <input type="file" name="brochure" class="input-xlarge">
 	          </div>
 	        </div>
+
+   	        <div class="control-group">
+	          <!-- Username -->
+	          <div class="controls">
+	            <input type="submit" name="Submit" value="Submit" class="input-xlarge">
+	          </div>
+	        </div>
+
 
 	      </fieldset>
 	    <!-- </form> -->
