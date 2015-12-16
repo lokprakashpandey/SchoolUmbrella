@@ -20,6 +20,7 @@
 
 
 	<section id="about-us" class="container main">
+  
 
           <div class="row-fluid">
             <div class="span9">
