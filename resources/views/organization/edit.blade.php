@@ -8,9 +8,8 @@
 	        </div>
 	        <div class="span6">
 	          <ul class="breadcrumb pull-right">
-	            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-	            <li><a href="#">Pages</a> <span class="divider">/</span></li>
-	            <li><a href="#">Organization</a> <span class="divider">/</span></li>
+	            <li><a href="{{url('')}}">Home</a> <span class="divider">/</span></li>
+	            <li><a href="{{url('organization')}}">Organization</a> <span class="divider">/</span></li>
 	            <li class="active">Edit</li>
 	          </ul>
 	        </div>
@@ -31,14 +30,14 @@
 	      	<div class="control-group">
 	          <!-- Firstname -->
 	          <div class="controls">
-	            <input type="text"  name="name" placeholder="Name" class="input-xlarge">
+	            <input type="text"  value="{{$organization->name}}" name="name" placeholder="Name" class="input-xlarge">
 	          </div>
 	        </div>
 
 	        <div class="control-group">
 	          <!-- Middlename -->
 	          <div class="controls">
-	            <input type="text"  name="address" placeholder="Address" class="input-xlarge">
+	            <input type="text"  name="address" value="{{$organization->address}}" placeholder="Address" class="input-xlarge">
 	          </div>
 	        </div>
 

@@ -18,7 +18,7 @@ class OrganizationController extends Controller
     public function index()
     {
         $organization = Organization::where('userId',Auth::user()->id)->first();
-        return view('organization')->with('organization',$organization);
+        return view('organization.index')->with('organization',$organization);
     }
 
     /**
@@ -61,7 +61,7 @@ class OrganizationController extends Controller
      */
     public function edit()
     {
-        return view('edit_organization');
+        return view('organization.edit');
     }
 
     /**
