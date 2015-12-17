@@ -73,12 +73,17 @@ class OrganizationController extends Controller
      */
     public function update(Request $request)
     {
-           if($organization = Organization::where('userId',Auth::user()->id)->first()) {}
+           if($organization = Organization::where('userId',Auth::user()->id)->first()) {
+            $filepath = base_path()."/public/uploads/".$organization->brochure;
+            unlink($filepath);
+
+           }
 
            else {
             $organization = new Organization;
             $organization->userId = Auth::user()->id;
             }
+
            $name = time().".".$request->file('brochure')->getClientOriginalExtension();
            $dest = base_path()."/public/uploads";
            $request->file('brochure')->move($dest,$name);
