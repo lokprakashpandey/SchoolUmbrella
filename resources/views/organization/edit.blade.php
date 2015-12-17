@@ -30,21 +30,35 @@
 	      	<div class="control-group">
 	          <!-- Firstname -->
 	          <div class="controls">
-	            <input type="text"  value="{{$organization->name}}" name="name" placeholder="Name" class="input-xlarge">
+	          @if($organization)
+	          <input type="text"  value="{{ $organization->name}} " name="name" placeholder="Name" class="input-xlarge">
+	          @else
+	          <input type="text"  value="" name="name" placeholder="Name" class="input-xlarge">
+	          @endif
+	            
 	          </div>
 	        </div>
 
 	        <div class="control-group">
 	          <!-- Middlename -->
 	          <div class="controls">
-	            <input type="text"  name="address" value="{{$organization->address}}" placeholder="Address" class="input-xlarge">
+	          	@if($organization)
+	          <input type="text"  value="{{$organization->address}}" name="address" placeholder="Name" class="input-xlarge">
+	          @else
+	          <input type="text"  name="address" value="" placeholder="Address" class="input-xlarge">
+	          @endif
+	            
 	          </div>
 	        </div>
 
 	        <div class="control-group">
 	          <!-- Lastname -->
+
 	          <div class="controls">
 	            <textarea  rows="10" cols="20" name="description" placeholder="Description" class="input-xlarge">
+	            	@if($organization)
+	            	{{$organization->description}}
+	            	@endif
 	          	</textarea>
 	          </div>
 	        </div>

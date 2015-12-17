@@ -61,7 +61,9 @@ class OrganizationController extends Controller
      */
     public function edit()
     {
-        return view('organization.edit');
+        $organization = Organization::where('userId',Auth::user()->id)->first();
+        return view('organization.edit')->with('organization', $organization);
+        
     }
 
     /**
@@ -73,25 +75,25 @@ class OrganizationController extends Controller
      */
     public function update(Request $request)
     {
-           if($organization = Organization::where('userId',Auth::user()->id)->first()) {
-            $filepath = base_path()."/public/uploads/".$organization->brochure;
-            unlink($filepath);
-
-           }
-
+           if($organization = Organization::where('userId',Auth::user()->id)->first()) {}
            else {
             $organization = new Organization;
             $organization->userId = Auth::user()->id;
             }
 
-           $name = time().".".$request->file('brochure')->getClientOriginalExtension();
-           $dest = base_path()."/public/uploads";
-           $request->file('brochure')->move($dest,$name);
+           if($request['brochure']){
+                $filepath = base_path()."/public/uploads/".$organization->brochure;
+                is_file($filepath)? file_exists($filepath)? unlink($filepath): " ": " ";
+                $name = time().".".$request->file('brochure')->getClientOriginalExtension();
+                $dest = base_path()."/public/uploads";
+                $request->file('brochure')->move($dest,$name);
+                $organization->brochure = $name;
+           }
+           
            
            $organization->name = $request['name'];
            $organization->address = $request['address'];
            $organization->description = $request['description'];
-           $organization->brochure = $name;
            $organization->save();
            \Session::flash('success_message','Your record has been updated');
            return redirect('organization/edit');
