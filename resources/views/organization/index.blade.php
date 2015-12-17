@@ -20,8 +20,6 @@
 
 
 	<section id="about-us" class="container main">
-  
-
           <div class="row-fluid">
             <div class="span9">
                 <!-- This div is used for empty space -->
