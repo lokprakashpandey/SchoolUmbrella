@@ -25,7 +25,7 @@
 	  	{{session('success_message')}}
 	  @endif
 	    <!-- <form class="center" action='' method="POST"> -->
-	    {!!Form::open(array('url'=>'organization/edit','method'=>'post','class'=>'center'))!!}
+	    {!!Form::open(array('url'=>'organization/edit','method'=>'post','class'=>'center', 'enctype'=>'multipart/form-data'))!!}
 	      <fieldset class="registration-form">
 	      	
 	      	<div class="control-group">
@@ -60,7 +60,7 @@
    	        <div class="control-group">
 	          <!-- Username -->
 	          <div class="controls">
-	            <input type="submit" name="Submit" value="Submit" class="input-xlarge">
+	            <input type="submit" name="Submit" value="Update" class="input-xlarge">
 	          </div>
 	        </div>
 
