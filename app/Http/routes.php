@@ -21,6 +21,7 @@ Route::get('admin','HomeController@admin');
 
 
 
+
 Route::group(['middleware'=>'organization'], function(){
 	Route::get('organization','OrganizationController@index');
 	Route::get('organization/edit','OrganizationController@edit');
@@ -41,6 +42,7 @@ Route::group(['middleware'=>'teacher'], function(){
 
 Route::group(['middleware'=>'admin'], function(){
 	Route::get('admin','AdminController@index');	
+
 
 });
 Route::controllers([

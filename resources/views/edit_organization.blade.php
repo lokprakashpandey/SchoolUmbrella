@@ -25,7 +25,7 @@
 	  	{{session('success_message')}}
 	  @endif
 	    <!-- <form class="center" action='' method="POST"> -->
-	    {!!Form::open(array('url'=>'organization/edit','method'=>'post','class'=>'center'))!!}
+	    {!!Form::open(array('url'=>'organization/edit','method'=>'post','class'=>'center','enctype'=>'multipart/form-data'))!!}
 	      <fieldset class="registration-form">
 	      	
 	      	<div class="control-group">
