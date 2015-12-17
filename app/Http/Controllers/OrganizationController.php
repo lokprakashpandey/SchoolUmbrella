@@ -61,7 +61,8 @@ class OrganizationController extends Controller
      */
     public function edit()
     {
-        return view('organization.edit');
+        $organization = Organization::where('userId',Auth::user()->id)->first();
+        return view('organization.edit')->with('organization',$organization);;
     }
 
     /**
