@@ -35,7 +35,6 @@
 	          @else
 	          <input type="text"  value="" name="name" placeholder="Name" class="input-xlarge">
 	          @endif
-	            
 	          </div>
 	        </div>
 
@@ -46,8 +45,7 @@
 	          <input type="text"  value="{{$organization->address}}" name="address" placeholder="Name" class="input-xlarge">
 	          @else
 	          <input type="text"  name="address" value="" placeholder="Address" class="input-xlarge">
-	          @endif
-	            
+	          @endif  
 	          </div>
 	        </div>
 

@@ -63,7 +63,6 @@ class OrganizationController extends Controller
     {
         $organization = Organization::where('userId',Auth::user()->id)->first();
         return view('organization.edit')->with('organization', $organization);
-        
     }
 
     /**
@@ -89,7 +88,6 @@ class OrganizationController extends Controller
                 $request->file('brochure')->move($dest,$name);
                 $organization->brochure = $name;
            }
-           
            
            $organization->name = $request['name'];
            $organization->address = $request['address'];
