@@ -79,15 +79,14 @@ class OrganizationController extends Controller
             $organization = new Organization;
             $organization->userId = Auth::user()->id;
             }
-           $dest = base_path().'/public/uploads';
-           $name = date("H:i:s").$request->file('brochure')->getExtension();
+           $name = time().".".$request->file('brochure')->getClientOriginalExtension();
+           $dest = base_path()."/public/uploads";
            $request->file('brochure')->move($dest,$name);
-           return $request->file('brochure');
-
+           
            $organization->name = $request['name'];
            $organization->address = $request['address'];
            $organization->description = $request['description'];
-           $organization->brochure = $request['brochure'];
+           $organization->brochure = $name;
            $organization->save();
            \Session::flash('success_message','Your record has been updated');
            return redirect('organization/edit');

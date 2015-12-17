@@ -29,13 +29,11 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-
         //maile banayeka middleware ka routes haru
         'organization' => \App\Http\Middleware\OrganizationMiddleware::class,
         'parent' => \App\Http\Middleware\ParentMiddleware::class,
         'student' => \App\Http\Middleware\StudentMiddleware::class,
         'teacher' => \App\Http\Middleware\TeacherMiddleware::class,
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
-
     ];
 }
