@@ -62,7 +62,7 @@ class OrganizationController extends Controller
     public function edit()
     {
         $organization = Organization::where('userId',Auth::user()->id)->first();
-        return view('organization.edit')->with('organization',$organization);;
+        return view('organization.edit')->with('organization',$organization);
     }
 
     /**
@@ -74,22 +74,21 @@ class OrganizationController extends Controller
      */
     public function update(Request $request)
     {
-           if($organization = Organization::where('userId',Auth::user()->id)->first()) {
-                
-            }
+
+           if($organization = Organization::where('userId',Auth::user()->id)->first()) {}
            else {
             $organization = new Organization;
             $organization->userId = Auth::user()->id;
             }
-
            if($request['brochure']){
                 $filepath = base_path()."/public/uploads/".$organization->brochure;
-                is_file($filepath)? file_exists($filepath)? unlink($filepath) : " " : " ";
+                is_file($filepath)? file_exists($filepath)? unlink($filepath): " ": " ";
                 $name = time().".".$request->file('brochure')->getClientOriginalExtension();
                 $dest = base_path()."/public/uploads";
                 $request->file('brochure')->move($dest,$name);
                 $organization->brochure = $name;
            }
+           
            $organization->name = $request['name'];
            $organization->address = $request['address'];
            $organization->description = $request['description'];

@@ -35,10 +35,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a id="logo" class="pull-left" href="index.html"></a>
+                        <a id="logo" class="pull-left" href="{{url()}}"></a>
                         <div class="nav-collapse collapse pull-right">
                             <ul class="nav">
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="{{url()}}">Home</a></li>
                                 <li><a href="about-us.html">About Us</a></li>
                                 <li><a href="services.html">Services</a></li>
                                 <li><a href="portfolio.html">Portfolio</a></li>

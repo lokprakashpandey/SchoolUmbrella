@@ -8,7 +8,7 @@
 	        </div>
 	        <div class="span6">
 	          <ul class="breadcrumb pull-right">
-	            <li><a href="#">Home</a> <span class="divider">/</span></li>
+	            <li><a href="{{url('')}}">Home</a> <span class="divider">/</span></li>
 	            <li><a href="#">Pages</a> <span class="divider">/</span></li>
 	            <li class="active">Organization</li>
 	          </ul>
@@ -20,7 +20,6 @@
 
 
 	<section id="about-us" class="container main">
-          
           <div class="row-fluid">
             <div class="span9">
                 <!-- This div is used for empty space -->
