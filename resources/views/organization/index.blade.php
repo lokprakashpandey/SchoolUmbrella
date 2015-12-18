@@ -31,8 +31,10 @@
 
         <div class="row-fluid">
             <div class="span6">
-                <h2>What we are</h2>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                @if($organization)
+                <h2>{{$organization->name}}</h2>
+                <p>{{$organization->description}}</p>
+                @endif
             </div>
             <div class="span6">
                 <h2>Our Skills</h2>
@@ -48,7 +50,7 @@
         <hr>
 
         <!-- Meet the team -->
-        <h1 class="center">Meet the Team</h1>
+       <!--  <h1 class="center">Meet the Team</h1>
 
         <hr>
 
@@ -91,12 +93,14 @@
         </div>
         <p>&nbsp;</p>
         <p></p>
-        <hr>
+        <hr> -->
 
         <div class="row-fluid">
             <div class="span6">
-                <h3>Why Choose Us?</h3>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                <h3>Address</h3>
+                @if($organization)
+                <p>{{$organization->address}}</p>
+                @endif
             </div>
             <div class="span6">
                 <h3>Our Services</h3>
