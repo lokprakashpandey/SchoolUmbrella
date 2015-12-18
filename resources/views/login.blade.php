@@ -8,8 +8,7 @@
 	        </div>
 	        <div class="span6">
 	          <ul class="breadcrumb pull-right">
-	            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-	            <li><a href="#">Pages</a> <span class="divider">/</span></li>
+	            <li><a href="{{url()}}">Home</a> <span class="divider">/</span></li>
 	            <li class="active">Login</li>
 	          </ul>
 	        </div>
@@ -54,6 +53,14 @@
 	            <button class="btn btn-success btn-large btn-block">Login</button>
 	          </div>
 	        </div>
+
+	        <div class="control-group">
+	          <!-- Button -->
+	          <div class="controls">
+	            <a href="{{url('register')}}" class="btn btn-success btn-large btn-block">Register</a>
+	          </div>
+	        </div>
+
 	      </fieldset>
 	    <!-- </form> -->
 	    {!!Form::close()!!}

@@ -30,12 +30,11 @@
 	      	<div class="control-group">
 	          <!-- Firstname -->
 	          <div class="controls">
-	          	@if($organization)
-	          	<input type="text"  value="{{$organization->name}}" name="name" placeholder="Name" class="input-xlarge">
-	          	@else
-	          	<input type="text"  value="" name="name" placeholder="Name" class="input-xlarge">
-	          	@endif
-	            
+	          @if($organization)
+	          <input type="text"  value="{{ $organization->name}} " name="name" placeholder="Name" class="input-xlarge">
+	          @else
+	          <input type="text"  value="" name="name" placeholder="Name" class="input-xlarge">
+	          @endif
 	          </div>
 	        </div>
 
@@ -43,18 +42,21 @@
 	          <!-- Middlename -->
 	          <div class="controls">
 	          	@if($organization)
-	          	<input type="text"  name="address" value="{{$organization->address}}" placeholder="Address" class="input-xlarge">
-	          	@else
-	          	<input type="text"  name="address" value="" placeholder="Address" class="input-xlarge">
-	          	@endif
-	            
+	          <input type="text"  value="{{$organization->address}}" name="address" placeholder="Name" class="input-xlarge">
+	          @else
+	          <input type="text"  name="address" value="" placeholder="Address" class="input-xlarge">
+	          @endif  
 	          </div>
 	        </div>
 
 	        <div class="control-group">
 	          <!-- Lastname -->
+
 	          <div class="controls">
 	            <textarea  rows="10" cols="20" name="description" placeholder="Description" class="input-xlarge">
+	            	@if($organization)
+	            	{{$organization->description}}
+	            	@endif
 	          	</textarea>
 	          </div>
 	        </div>
@@ -69,7 +71,7 @@
    	        <div class="control-group">
 	          <!-- Username -->
 	          <div class="controls">
-	            <input type="submit" name="Submit" value="Submit" class="input-xlarge">
+	            <input type="submit" name="Submit" value="Update" class="input-xlarge">
 	          </div>
 	        </div>
 
