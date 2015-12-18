@@ -45,7 +45,7 @@
 	          <input type="text"  value="{{$organization->address}}" name="address" placeholder="Address" class="input-xlarge">
 	          @else
 	          <input type="text"  name="address" value="" placeholder="Address" class="input-xlarge">
-	          @endif  
+	          @endif
 	          </div>
 	        </div>
 
@@ -74,7 +74,6 @@
 	            <input type="submit" name="Submit" value="Update" class="input-xlarge">
 	          </div>
 	        </div>
-
 
 	      </fieldset>
 	    <!-- </form> -->
