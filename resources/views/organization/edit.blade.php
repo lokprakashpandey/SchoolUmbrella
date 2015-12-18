@@ -42,7 +42,7 @@
 	          <!-- Middlename -->
 	          <div class="controls">
 	          	@if($organization)
-	          <input type="text"  value="{{$organization->address}}" name="address" placeholder="Name" class="input-xlarge">
+	          <input type="text"  value="{{$organization->address}}" name="address" placeholder="Address" class="input-xlarge">
 	          @else
 	          <input type="text"  name="address" value="" placeholder="Address" class="input-xlarge">
 	          @endif  
