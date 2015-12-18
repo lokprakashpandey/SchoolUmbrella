@@ -76,7 +76,7 @@
         </header>
         <!-- /header -->
 
-            @yield('content')
+        @yield('content')
         
         <!--Bottom-->
         <section id="bottom" class="main">
@@ -91,19 +91,19 @@
                         <h4>ADDRESS</h4>
                         <ul class="unstyled address">
                             <li>
-                                <i class="icon-home"></i><strong>Address:</strong> 1032 Wayback Lane, Wantagh<br>NY 11793
+                                <i class="icon-home"></i><strong>Address:</strong> Baluwatar (Near Tundaldevi Temple), Kathmandu, Nepal
                             </li>
                             <li>
                                 <i class="icon-envelope"></i>
-                                <strong>Email: </strong> support@email.com
+                                <strong>Email: </strong> <a href="#">admin@schoolumbrella.com</a>
                             </li>
                             <li>
                                 <i class="icon-globe"></i>
-                                <strong>Website:</strong> www.domain.com
+                                <strong>Website:</strong> www.schoolumbrella.com
                             </li>
                             <li>
                                 <i class="icon-phone"></i>
-                                <strong>Toll Free:</strong> 631-409-3105
+                                <strong>Landline:</strong> +977-1-401000
                             </li>
                         </ul>
                     </div>
