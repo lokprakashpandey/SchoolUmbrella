@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -16,8 +17,14 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admin = Admin::where('userId',Auth::user()->id)->first();
-        return view('admin')->with('admin',$admin);
+        if(Auth::check() && Auth::user()->user_typeId == 1) {
+            $admin = Admin::where('userId',Auth::user()->id)->first();
+            return view('admin')->with('admin',$admin); 
+        }
+        else{
+            return view('');
+        }
+        
     }
 
     /**
