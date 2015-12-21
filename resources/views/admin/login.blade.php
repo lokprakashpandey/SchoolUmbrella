@@ -8,11 +8,12 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        {!!Form::open(array('url'=>'admin/login','method'=>'post','class'=>'center'))!!}
+                        {!!Form::open(array('url'=>'admin/login','method'=>'post','class'=>'center'))!!} 
+                        <!-- Post method is used for password for security reason -->
                         <!-- <form role="form"> -->
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
@@ -23,7 +24,9 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button class="btn btn-success btn-large btn-block">Login</button>
+                                <button class="btn btn-success btn-large btn-block">Login</button> 
+                                <!-- Button checks Form first, then url, then method, if there is no url n method
+                                 then Form is sent to same url with get method -->
                             </fieldset>
                         {!!Form::close()!!}    
                        <!--  </form> -->
