@@ -42,6 +42,7 @@ Route::group(['middleware'=>'admin'], function(){
 	Route::get('admin/edit','AdminController@edit');	
 	Route::post('admin/login','AdminController@login');
 
+
 });
 
 Route::controllers([

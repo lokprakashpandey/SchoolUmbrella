@@ -17,12 +17,17 @@ class AdminController extends Controller
      */
     public function index()
     {
+
+        // // $admin = Admin::where('userId',Auth::user()->id)->first();
+        // // return view('admin')->with('admin',$admin);
+        // return view('admin::login');
+
         if(Auth::check() && Auth::user()->user_typeId == 1) {
             $admin = Admin::where('userId',Auth::user()->id)->first();
             return view('admin')->with('admin',$admin); 
         }
         else{
-            return view('admin.index');
+            return view('admin.login');
         }
         
     }
