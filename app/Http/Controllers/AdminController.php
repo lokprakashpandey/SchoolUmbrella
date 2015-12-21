@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -23,8 +24,7 @@ class AdminController extends Controller
         // return view('admin::login');
 
         if(Auth::check() && Auth::user()->user_typeId == 1) {
-            $admin = Admin::where('userId',Auth::user()->id)->first();
-            return view('admin.home')->with('admin',$admin); 
+            return redirect('myAdmin');
         }
         else{
             return view('admin.login');
@@ -90,8 +90,9 @@ class AdminController extends Controller
 
     public function login(Request $request) 
     {
+        //return $request['username'];
     if(Auth::attempt(['username'=>$request['username'], 'password'=>$request['password']]) && Auth::user()->user_typeId == 1)
-        return view('admin.home');
+        return redirect('myAdmin');  
     else 
         {
             \Session::flash('error_message','Invalid credentials!');
@@ -108,5 +109,11 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function home(){
+
+            $admin = User::find(Auth::user()->id);
+            return view('admin.home')->with('admin',$admin); 
+
     }
 }
