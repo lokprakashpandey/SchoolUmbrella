@@ -18,6 +18,7 @@ Route::get('/login','HomeController@login');
 Route::post('/login','HomeController@authenticate');
 
 Route::get('/adminLogin','AdminController@index');
+Route::post('admin/login','AdminController@login');
 
 Route::group(['middleware'=>'organization'], function(){
 	Route::get('organization','OrganizationController@index');
@@ -39,8 +40,7 @@ Route::group(['middleware'=>'teacher'], function(){
 
 Route::group(['middleware'=>'admin'], function(){
 	Route::get('myAdmin','AdminController@index');
-	Route::get('admin/edit','AdminController@edit');	
-	Route::post('admin/login','AdminController@login');
+	Route::get('admin/edit','AdminController@edit');
 
 
 });
