@@ -115,7 +115,7 @@ class HomeController extends Controller
 
 
             if(Auth::user()->user_typeId == 5){
-                return redirect('organization'); //Redirect into  Organization page
+                return redirect('organization'); //Redirect into  organization route
             }
             return redirect(''); // Redirects into index page/Route
         }

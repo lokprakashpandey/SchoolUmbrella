@@ -87,6 +87,18 @@ class AdminController extends Controller
         //
     }
 
+
+    public function login(Request $request) 
+    {
+    if(Auth::attempt(['username'=>$request['username'], 'password'=>$request['password']]) && Auth::user()->user_typeId == 1)
+        return view('admin.home');
+    else 
+        {
+            \Session::flash('error_message','Invalid credentials!');
+            return redirect('');
+        }        
+    }
+
     /**
      * Remove the specified resource from storage.
      *

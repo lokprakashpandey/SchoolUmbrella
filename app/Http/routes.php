@@ -18,6 +18,8 @@ Route::get('/login','HomeController@login');
 Route::post('/login','HomeController@authenticate');
 
 Route::get('/adminLogin','AdminController@index');
+Route::post('admin/login','AdminController@login');
+
 Route::group(['middleware'=>'organization'], function(){
 	Route::get('organization','OrganizationController@index');
 	Route::get('organization/edit','OrganizationController@edit');
@@ -37,9 +39,12 @@ Route::group(['middleware'=>'teacher'], function(){
 });
 
 Route::group(['middleware'=>'admin'], function(){
-	Route::get('/myAdmin','AdminController@index');
+	Route::get('myAdmin','AdminController@index');
 	Route::get('admin/edit','AdminController@edit');
+
+
 });
+
 Route::controllers([
 		'auth' => 'Auth\AuthController',
 		]);
