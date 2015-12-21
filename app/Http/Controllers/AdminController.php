@@ -24,7 +24,7 @@ class AdminController extends Controller
 
         if(Auth::check() && Auth::user()->user_typeId == 1) {
             $admin = Admin::where('userId',Auth::user()->id)->first();
-            return view('admin')->with('admin',$admin); 
+            return view('admin.home')->with('admin',$admin); 
         }
         else{
             return view('admin.login');
