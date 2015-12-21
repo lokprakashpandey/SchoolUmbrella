@@ -40,9 +40,10 @@ Route::group(['middleware'=>'teacher'], function(){
 Route::group(['middleware'=>'admin'], function(){
 	Route::get('myAdmin','AdminController@index');
 	Route::get('admin/edit','AdminController@edit');	
-
+	Route::post('admin/login','AdminController@login');
 
 });
+
 Route::controllers([
 		'auth' => 'Auth\AuthController',
 		]);
