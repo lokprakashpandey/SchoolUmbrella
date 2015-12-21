@@ -39,7 +39,7 @@ Route::group(['middleware'=>'teacher'], function(){
 });
 
 Route::group(['middleware'=>'admin'], function(){
-	Route::get('myAdmin','AdminController@index');
+	Route::get('myAdmin','AdminController@home');
 	Route::get('admin/edit','AdminController@edit');
 
 
