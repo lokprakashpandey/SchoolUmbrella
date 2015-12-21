@@ -1,1 +1,1 @@
-@extends('admin::index')
+@extends('admin.index')

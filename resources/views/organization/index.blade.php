@@ -39,7 +39,7 @@
             <div class="span6">
                 <h2>Our Courses</h2>
                 <div>
-                    <div class="progress"><div class="bar" style="width: 80%; text-align:left; padding-left:10px;">Wordpress</div></div>
+                    <div class="progress"><div class="bar" style="width: 80%; text-align:left; padding-left:10px;">Wordpresss</div></div>
                     <div class="progress progress-warning"><div class="bar" style="width: 70%; text-align:left; padding-left:10px;">Joomla</div></div>
                     <div class="progress progress-info"><div class="bar" style="width: 60%; text-align:left; padding-left:10px;">Drupal</div></div>
                     <div class="progress progress-danger"><div class="bar" style="width: 90%; text-align:left; padding-left:10px;">Magento</div></div>
