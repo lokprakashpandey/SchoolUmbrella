@@ -16,7 +16,8 @@ class AffiliateController extends Controller
      */
     public function index()
     {
-        //
+        $affiliates = Affiliate::all();
+        return view('admin/affiliates')->with('affiliate',$affiliates);
     }
 
     /**
