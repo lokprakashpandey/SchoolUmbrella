@@ -43,8 +43,9 @@ class AffiliateController extends Controller
     {
         $aff = new Affiliate;
         $aff->description = $request['name'];
+        $aff->countryId = 1;
+        $aff->save();
         return $aff;
-        //$aff->save();
         //return redirect('admin/affiliateAdd');
         
     }
