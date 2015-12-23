@@ -41,6 +41,8 @@ Route::group(['middleware'=>'admin','prefix' => 'myAdmin'], function(){
 	Route::get('','AdminController@home');
 	Route::get('edit','AdminController@edit');
 	Route::get('affiliates','AffiliateController@index');
+	Route::get('affiliates/add','AffiliateController@create');
+	Route::post('affiliates/add','AffiliateController@store');
 });
 
 Route::controllers([

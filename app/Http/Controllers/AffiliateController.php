@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Affiliate;
 
 class AffiliateController extends Controller
 {
@@ -16,8 +17,10 @@ class AffiliateController extends Controller
      */
     public function index()
     {
-        $affiliates = Affiliate::all();
-        return view('admin/affiliates')->with('affiliate',$affiliates);
+        $aff = Affiliate::all();
+        return view('admin/affiliate')->with('affiliates',$aff);
+        // admin/affiliate; here affiliate is view name, 
+        // where as ('affiliate',$aff); affiliate is alise for $aff.i.e, affiliates vararable should be catched in view
     }
 
     /**
@@ -27,7 +30,7 @@ class AffiliateController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/affiliateAdd');
     }
 
     /**
@@ -38,7 +41,12 @@ class AffiliateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $aff = new Affiliate;
+        $aff->description = $request['name'];
+        return $aff;
+        //$aff->save();
+        //return redirect('admin/affiliateAdd');
+        
     }
 
     /**
