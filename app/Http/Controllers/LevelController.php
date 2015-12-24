@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Level;
 
 class LevelController extends Controller
 {
@@ -16,7 +17,13 @@ class LevelController extends Controller
      */
     public function index()
     {
-        //
+        
+        $level = Level::all();
+
+        return view('admin/level')->with('levels',$level);
+        // admin/level; here level is view name, 
+        // where as ('level',$level); level is alise for $level.i.e; 
+        // level vararable should be catched in view
     }
 
     /**
@@ -26,7 +33,7 @@ class LevelController extends Controller
      */
     public function create()
     {
-        //
+       return view('admin/levelAdd');
     }
 
     /**
@@ -37,7 +44,16 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $level = new Level;
+        $level->name = $request['name'];
+        
+        if($level->save()){
+            \Session::flash('sucess_message','Level is created Sucessfully!');
+        }
+        else{
+            \Session::flash('error_message','level is not created !!');
+        }
+        return redirect('myAdmin/levels');
     }
 
     /**
