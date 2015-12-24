@@ -15,6 +15,7 @@ class CreateAffiliatesTable extends Migration
         Schema::dropIfExists('affiliates');
         Schema::create('affiliates', function(Blueprint $table){
             $table->increments('id');
+            $table->string('name');
             $table->longText('description');
             $table->integer('countryId')->unsigned();
             $table->foreign('countryId')->references('id')->on('countries');
