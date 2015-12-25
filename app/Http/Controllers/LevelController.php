@@ -19,7 +19,6 @@ class LevelController extends Controller
     {
         
         $level = Level::all();
-
         return view('admin/level')->with('levels',$level);
         // admin/level; here level is view name, 
         // where as ('level',$level); level is alise for $level.i.e; 
@@ -44,15 +43,15 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-        $level = new Level;
-        $level->name = $request['name'];
+        try{
+            $level = new Level;
+            $level->name = $request['name'];
+            $level->save(); 
+            \Session::flash('sucess_message','Level is created Sucessfully!');   
+        }catch(\Exception $e){ 
+            \Session::flash('error_message','Level is not created !!');
+        }
         
-        if($level->save()){
-            \Session::flash('sucess_message','Level is created Sucessfully!');
-        }
-        else{
-            \Session::flash('error_message','level is not created !!');
-        }
         return redirect('myAdmin/levels');
     }
 
@@ -75,7 +74,8 @@ class LevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $lvl = Level::find($id);
+        return view('admin.edit_level')->with('level',$lvl);
     }
 
     /**
@@ -87,7 +87,11 @@ class LevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $lv = Level::find($id);
+        $lv->name= $request['name'];
+        $lv->save();
+        \Session::flash('sucess_message','Sucessfully Updated');
+        return redirect('myAdmin/levels');
     }
 
     /**
@@ -98,6 +102,10 @@ class LevelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lv = Level::find($id);
+        $lv->delete();
+        \Session::flash('sucess_message','Sucessfully DELETED');
+        return redirect('myAdmin/levels');
+
     }
 }

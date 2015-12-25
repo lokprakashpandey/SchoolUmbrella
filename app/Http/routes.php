@@ -46,6 +46,9 @@ Route::group(['middleware'=>'admin','prefix' => 'myAdmin'], function(){
 	Route::get('levels','LevelController@index');
 	Route::get('levels/add','LevelController@create');
 	Route::post('levels/add','LevelController@store');
+	Route::get('levels/edit/{id}','LevelController@edit');
+	Route::post('levels/edit/{id}','LevelController@update');
+	Route::get('levels/del/{id}','LevelController@destroy');
 });
 
 Route::controllers([
