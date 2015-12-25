@@ -1,6 +1,5 @@
 @extends('admin.index')
 @section('content')
-
 	<table>
 		<tr>
 			<td>S.N.</td>

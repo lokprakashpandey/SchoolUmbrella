@@ -293,7 +293,7 @@
                             <a href="{{url('myAdmin/affiliates')}}"><i class="fa fa-table fa-fw"></i> Affiliates</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="{{url('myAdmin/levels')}}"><i class="fa fa-edit fa-fw"></i> Levels</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
