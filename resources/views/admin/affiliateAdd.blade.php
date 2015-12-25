@@ -5,7 +5,23 @@
 	<!-- <form role="form"> -->
 	    <fieldset>
 	        <div>
+	        <label>Name:</label>
 	            <input placeholder="Name" name="name" type="text" autofocus>
+	        </div>
+	        
+	        <div>
+	        <label>Description:</label>
+	            <textarea name="description"></textarea>  
+	        </div>
+	        
+	        <div>
+	           <label>Country</label>
+	            <select name="countryId" class="input-xlarge"> 
+	            	<option>Select Country</option>
+	            	@foreach($countries as $counrty)
+	            	 	<option value="{{$counrty->id}}">{{$counrty->name}}</option>
+	            	@endforeach
+	            </select>
 	        </div>
 	        
 	        <!-- Change this to a button or input when using this as a form -->
