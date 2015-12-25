@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Affiliate;
+use App\Country;
 
 class AffiliateController extends Controller
 {
@@ -30,7 +31,8 @@ class AffiliateController extends Controller
      */
     public function create()
     {
-        return view('admin/affiliateAdd');
+        $cnt = Country::all();
+        return view('admin/affiliateAdd')->with('countries',$cnt);
     }
 
     /**
@@ -42,11 +44,12 @@ class AffiliateController extends Controller
     public function store(Request $request)
     {
         $aff = new Affiliate;
-        $aff->description = $request['name'];
-        $aff->countryId = 1;
+        $aff->name = $request['name'];
+        $aff->description = $request['description'];
+        $aff->countryId = $request['countryId'];
         $aff->save();
-        return $aff;
-        //return redirect('admin/affiliateAdd');
+        return redirect('myAdmin/affiliates');
+        
         
     }
 
