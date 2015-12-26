@@ -43,6 +43,10 @@ Route::group(['middleware'=>'admin','prefix' => 'myAdmin'], function(){
 	Route::get('affiliates','AffiliateController@index');
 	Route::get('affiliates/add','AffiliateController@create');
 	Route::post('affiliates/add','AffiliateController@store');
+	Route::get('affiliates/edit/{id}','AffiliateController@edit');
+	Route::post('affiliates/edit/{id}','AffiliateController@update');
+	Route::get('affiliates/del/{id}','AffiliateController@destroy');
+	
 	Route::get('levels','LevelController@index');
 	Route::get('levels/add','LevelController@create');
 	Route::post('levels/add','LevelController@store');

@@ -43,11 +43,17 @@ class AffiliateController extends Controller
      */
     public function store(Request $request)
     {
-        $aff = new Affiliate;
-        $aff->name = $request['name'];
-        $aff->description = $request['description'];
-        $aff->countryId = $request['countryId'];
-        $aff->save();
+        try{
+            $aff = new Affiliate;
+            $aff->name = $request['name'];
+            $aff->description = $request['description'];
+            $aff->countryId = $request['countryId'];
+            $aff->save();
+            \Session::flash('sucess_message','Affiliate is sucessfully stored.');
+        }catch(\Exception $e){
+            \Session::flash('error_message','Affiliate could not created!');
+        }
+        
         return redirect('myAdmin/affiliates');
         
         
@@ -72,7 +78,9 @@ class AffiliateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $aff = Affiliate::find($id);
+        $cnt = Country::all();
+        return view('admin.edit_affiliate')->with('affiliate',$aff)->with('countries',$cnt);
     }
 
     /**
@@ -84,7 +92,13 @@ class AffiliateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $aff = Affiliate::find($id);
+        $aff->name = $request['name'];
+        $aff->description = $request['description'];
+        $aff->countryId = $request['countryId'];
+        $aff->save();
+        \Session::flash('sucess_message','Sucessfully Updated');
+        return redirect('myAdmin/affiliates');
     }
 
     /**
@@ -95,6 +109,13 @@ class AffiliateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            $aff = Affiliate::find($id);
+            $aff->delete();
+            \Session::flash('sucess_message','Sucessfully Deleted');
+        }catch(\Exception $e){
+            \Session::flash('error_message','Affiliates already deleted!');
+        }
+        return redirect('myAdmin/affiliates');
     }
 }
