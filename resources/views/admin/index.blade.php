@@ -18,7 +18,8 @@
     <!-- MetisMenu CSS -->
     {!!Html::style('admin/css/metisMenu.min.css')!!}
     <!-- <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"> -->
-
+    {!!Html::style('admin/css/dataTables.bootstrap.css')!!}
+    {!!Html::style('admin/css/dataTables.responsive.css')!!}
     <!-- Custom CSS -->
     {!!Html::style('admin/css/sb-admin-2.css')!!}
     <!-- <link href="../dist/css/sb-admin-2.css" rel="stylesheet"> -->
@@ -39,6 +40,7 @@
 <body>
     <div id="wrapper">
         <!-- Navigation -->
+        @if(Auth::check())
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -367,11 +369,14 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+
         <div id="page-wrapper">
+            @endif
 
             @yield('content')
-        
+        @if(Auth::check())
         </div>
+        @endif
         <!-- /#page-wrapper -->
 
     </div>
@@ -387,10 +392,18 @@
     <!-- Metis Menu Plugin JavaScript -->
     {!!Html::script('admin/js/metisMenu.min.js')!!}
     <!-- <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script> -->
-    
+    {!!Html::script('admin/js/jquery.dataTables.min.js')!!}
+    {!!Html::script('admin/js/dataTables.bootstrap.min.js')!!}
     <!-- Custom Theme JavaScript -->
     {!!Html::script('admin/js/sb-admin-2.js')!!}
     <!-- <script src="../dist/js/sb-admin-2.js"></script> -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+    </script>
     
 </body>
 
