@@ -369,13 +369,15 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+    
         <div id="page-wrapper">
+            <!-- page-wrapper div should not  diplay for unauthenticated user -->
             @endif
 
             @yield('content')
         @if(Auth::check())
         </div>
+        <!-- without start of page-wrapper div this end of div may close any other div  -->
         @endif
         <!-- /#page-wrapper -->
 
