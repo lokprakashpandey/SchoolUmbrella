@@ -49,7 +49,7 @@ class LevelController extends Controller
             $level->save(); 
             \Session::flash('sucess_message','Level is created Sucessfully!');   
         }catch(\Exception $e){ 
-            \Session::flash('error_message','Level is not created !!');
+            \Session::flash('error_message','Oops !! Level is not created.');
         }
         
         return redirect('myAdmin/levels');
@@ -102,9 +102,14 @@ class LevelController extends Controller
      */
     public function destroy($id)
     {
-        $lv = Level::find($id);
-        $lv->delete();
-        \Session::flash('sucess_message','Sucessfully DELETED');
+        try {
+            $lv = Level::find($id);
+            $lv->delete();
+            \Session::flash('sucess_message','Level is sucessfully DELETED.');
+        } catch (Exception $e) {
+            \Session::flash('error_message','Oops!! Level could not DELETED.');
+        }
+        
         return redirect('myAdmin/levels');
 
     }
