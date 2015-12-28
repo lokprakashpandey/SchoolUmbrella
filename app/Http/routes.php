@@ -52,6 +52,8 @@ Route::group(['middleware'=>'admin','prefix' => 'myAdmin'], function(){
 	Route::get('levels/edit/{id}','LevelController@edit');
 	Route::post('levels/edit/{id}','LevelController@update');
 	Route::get('levels/del/{id}','LevelController@destroy');
+
+	Route::get('streams','StreamController@index');
 });
 
 Route::controllers([
