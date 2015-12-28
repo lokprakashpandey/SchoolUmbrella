@@ -1,0 +1,9 @@
+@extends('admin.index')
+@section('content')
+    <table>
+        <tr>
+            <td>SN</td>
+            <td>Name</td>
+        </tr>
+    </table>
+@endsection
