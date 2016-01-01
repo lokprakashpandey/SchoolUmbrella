@@ -65,6 +65,7 @@ class OrganizationController extends Controller
     {
         $organization = Organization::where('userId',Auth::user()->id)->first();
         $crs = Course::all();
+        //return courses all data
         return view('organization.edit')->with('organization',$organization)->with('courses',$crs);
     }
 
