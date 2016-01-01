@@ -16,6 +16,8 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function(Blueprint $table){
             $table->increments('id');
             $table->string('name');
+            $table->integer('affiliateId')->unsigned();
+            $table->foreign('affiliateId')->references('id')->on('affiliates');
             $table->integer('streamId')->unsigned();
             $table->foreign('streamId')->references('id')->on('streams');
             $table->integer('levelId')->unsigned();

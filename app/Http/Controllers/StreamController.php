@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Stream;
+use App\Affiliate;
 
 class StreamController extends Controller
 {
@@ -28,7 +29,7 @@ class StreamController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/streamAdd');
     }
 
     /**
@@ -39,7 +40,17 @@ class StreamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $stm = new Stream;
+            $stm->name = $request['name'];
+            $stm->save();
+            \Session::flash('sucess_message','Stream is sucessfully stored.');
+
+        }catch(\Exception $e){
+            \Session::flash('error_message','Stream could not created!');
+        }
+
+        return redirect('myAdmin/streams');
     }
 
     /**
@@ -61,7 +72,8 @@ class StreamController extends Controller
      */
     public function edit($id)
     {
-        //
+        $stm = Stream::find($id);
+        return view('admin.edit_stream')->with('stream',$stm);
     }
 
     /**
@@ -73,7 +85,11 @@ class StreamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $stm = Stream::find($id);
+        $stm->name = $request['name'];
+        $stm->save();
+        \Session::flash('sucess_message','Stream sucessfully updated');
+        return redirect('myAdmin/streams');
     }
 
     /**
@@ -84,6 +100,13 @@ class StreamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            $stm = Stream::find($id);
+            $stm->delete();
+            \Session::flash('sucess_message','Stream sucessfully DELETED');
+        }catch(\Exception $e){
+            \Session::flash('error_message','Stream could not DELETED');
+        }
+        return redirect('myAdmin/streams');
     }
 }

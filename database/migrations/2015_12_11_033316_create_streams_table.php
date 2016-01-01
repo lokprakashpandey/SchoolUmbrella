@@ -15,9 +15,7 @@ class CreateStreamsTable extends Migration
         Schema::dropIfExists('streams');
         Schema::create('streams', function(Blueprint $table){
             $table->increments('id');
-            $table->string('name');
-            $table->integer('affiliateId')->unsigned();
-            $table->foreign('affiliateId')->references('id')->on('affiliates');
+            $table->string('name')->unique();
         });
     }
 

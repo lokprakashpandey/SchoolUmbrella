@@ -18,11 +18,13 @@
 	  </section>
 	  <!-- / .title -->
 
-<section id="registration-page" class="container">
+	<section id="registration-page" class="container">
 
-	@if(session('success_message'))
-	  	{{session('success_message')}}
-	  @endif
+		@if(session('success_message'))
+		  {{session('success_message')}}
+		@endif
+
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Update Courses</button>
 	    <!-- <form class="center" action='' method="POST"> -->
 	    {!!Form::open(array('url'=>'organization/edit','method'=>'post','class'=>'center','enctype'=>'multipart/form-data'))!!}
 	      <fieldset class="registration-form">
@@ -79,5 +81,34 @@
 	    <!-- </form> -->
 	    {!!Form::close()!!}
 	  </section>
+
+	  <!-- Modal -->
+	  <div id="myModal" class="modal fade" role="dialog">
+	    <div class="modal-dialog">
+
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Update Courses</h4>
+	        </div>
+	        <div class="modal-body">
+	        {!!Form::open(array('url'=>"organization/addCourses",'method' => 'post'))!!}
+	          @foreach($courses as $course)
+	          		<div class="checkbox">
+	          		  <label>
+	          		  <input name="courses[]" type="checkbox" value="{{$course->id}}">{{$course->name}}</label>
+	          		</div>	
+	          @endforeach
+	          <button>UPDATE</button>
+	         {!!Form::close()!!} 
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+
+	    </div>
+	  </div>
 
 @endsection

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Course;
+use App\Stream;
+use App\Level;
+use App\Affiliate;
 
 class CourseController extends Controller
 {
@@ -16,7 +20,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $course = Course::all();
+        return view('admin/course')->with('courses',$course);
     }
 
     /**
@@ -26,7 +31,10 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        $stm = Stream::all();
+        $lvl = Level::all();
+        $aff = Affiliate::all();
+        return view('admin/courseAdd')->with('streams',$stm)->with('levels',$lvl)->with('affiliates',$aff);
     }
 
     /**
@@ -37,7 +45,15 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $crs = new Course;
+        $crs->name = $request['name'];
+        $crs->affiliateId = $request['affiliateId'];
+        $crs->streamId = $request['streamId'];
+        $crs->levelId = $request['levelId'];
+        $crs->save();
+        \Session::flash('sucess_message','Course is sucessfully created.');
+        return redirect('myAdmin/courses');
+
     }
 
     /**
@@ -59,7 +75,11 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $crs = Course::find($id);
+        $aff = Affiliate::all();
+        $stm = Stream::all();
+        $lvl = Level::all();
+        return view('admin/edit_course')->with('course',$crs)->with('affiliates',$aff)->with('streams',$stm)->with('levels',$lvl);
     }
 
     /**
@@ -71,7 +91,14 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $crs = Course::find($id);
+        $crs->name = $request['name'];
+        $crs->affiliateId = $request['affiliateId'];
+        $crs->streamId = $request['streamId'];
+        $crs->levelId = $request['levelId'];
+        $crs->save();
+        \Session::flash('sucess_message','Course is sucessfully UPDATED.');
+        return redirect('myAdmin/courses');
     }
 
     /**
@@ -82,6 +109,9 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $crs = Course::find($id);
+        $crs->delete();
+        \Session::flash('sucess_message','Course deleted sucessfully');
+        return redirect('myAdmin/courses');
     }
 }
