@@ -96,8 +96,8 @@
                             <li>
                                 <i class="icon-envelope"></i>
                                 <strong>Email: </strong> 
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#contactModal">
-                                admin@schoolumbrella.com</button>
+                                <a data-toggle="modal" data-target="#contactModal">
+                                admin@schoolumbrella.com</a>
                             </li>
                             <li>
                                 <i class="icon-globe"></i>
@@ -110,7 +110,6 @@
                         </ul>
                     </div>
                     <!--End Contact Form-->
-
 
 <!-- Modal -->
       <div id="contactModal" class="modal fade" role="dialog">
@@ -136,10 +135,6 @@
 
         </div>
       </div>
-
-
-
-
 
 
 
@@ -279,6 +274,29 @@
             <!--/Modal Body-->
         </div>
 
+
+
+
+        <!-- Modal -->
+         <div id="contactModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Update Courses</h4>
+                </div>
+                <div class="modal-body">
+                
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
     {!!Html::script('js/vendor/jquery-1.9.1.min.js')!!}
     {!!Html::script('js/vendor/bootstrap.min.js')!!}
     {!!Html::script('js/main.js')!!}
