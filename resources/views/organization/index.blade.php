@@ -10,7 +10,6 @@
 	          <ul class="breadcrumb pull-right">
 	            <li><a href="{{url('')}}">Home</a> <span class="divider">/</span></li>
               <!-- url le website_ko_name/public samma ko link dinchha -->
-	            <li><a href="#">Pages</a> <span class="divider">/</span></li>
 	            <li class="active">Organization</li>
 	          </ul>
 	        </div>
