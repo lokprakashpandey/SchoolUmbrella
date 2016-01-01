@@ -23,7 +23,7 @@
 		  {{session('success_message')}}
 		@endif
 
-		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Update Courses</button>
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#coursesModal">Update Courses</button>
 	    <!-- <form class="center" action='' method="POST"> -->
 	    {!!Form::open(array('url'=>'organization/edit','method'=>'post','class'=>'center','enctype'=>'multipart/form-data'))!!}
 	      <fieldset class="registration-form">
@@ -82,7 +82,7 @@
 	  </section>
 
 	  <!-- Modal -->
-	  <div id="myModal" class="modal fade" role="dialog">
+	  <div id="coursesModal" class="modal fade" role="dialog">
 	    <div class="modal-dialog">
 
 	      <!-- Modal content-->
