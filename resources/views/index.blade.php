@@ -95,7 +95,8 @@
                             </li>
                             <li>
                                 <i class="icon-envelope"></i>
-                                <strong>Email: </strong> <a href="#">admin@schoolumbrella.com</a>
+                                <strong>Email: </strong> 
+                                <a data-toggle="model" data-target="#contactModel">admin@schoolumbrella.com</a>
                             </li>
                             <li>
                                 <i class="icon-globe"></i>

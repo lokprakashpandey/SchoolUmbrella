@@ -19,9 +19,9 @@
 		@foreach($courses as $index => $course)
 		<tr>
 			<td>{{$index+1}}</td>
-			<td>{{$course->affiliate['name']}}</td>
-			<td>{{$course->stream['name']}}</td>
-			<td>{{$course->level['name']}}</td>
+			<td>{{$course->affiliate['name']}}</td> <!-- affiliate['name'] course ko Model bata aako -->
+			<td>{{$course->stream['name']}}</td> <!-- stream['name']course ko Model bata aako -->
+			<td>{{$course->level['name']}}</td> <!-- level['name'] course ko Model bata aako -->
 			<td>{{$course->name}}</td>	
 
 			<td><a href='{{url("myAdmin/courses/del/$course->id")}}'>Del</a></td>

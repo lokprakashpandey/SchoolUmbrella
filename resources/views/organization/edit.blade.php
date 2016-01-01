@@ -18,7 +18,7 @@
 	  </section>
 	  <!-- / .title -->
 
-	<section id="registration-page" class="container">
+		<section id="registration-page" class="container">
 
 		@if(session('success_message'))
 		  {{session('success_message')}}
@@ -80,35 +80,55 @@
 	      </fieldset>
 	    <!-- </form> -->
 	    {!!Form::close()!!}
-	  </section>
+	 	</section>
 
 	  <!-- Modal -->
-	  <div id="myModal" class="modal fade" role="dialog">
-	    <div class="modal-dialog">
+		  <div id="myModal" class="modal fade" role="dialog">
+		    <div class="modal-dialog">
 
-	      <!-- Modal content-->
-	      <div class="modal-content">
-	        <div class="modal-header">
-	          <button type="button" class="close" data-dismiss="modal">&times;</button>
-	          <h4 class="modal-title">Update Courses</h4>
-	        </div>
-	        <div class="modal-body">
-	        {!!Form::open(array('url'=>"organization/addCourses",'method' => 'post'))!!}
-	          @foreach($courses as $course)
-	          		<div class="checkbox">
-	          		  <label>
-	          		  <input name="courses[]" type="checkbox" value="{{$course->id}}">{{$course->name}}</label>
-	          		</div>	
-	          @endforeach
-	          <button>UPDATE</button>
-	         {!!Form::close()!!} 
-	        </div>
-	        <div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	      </div>
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Update Courses</h4>
+		        </div>
+		        <div class="modal-body">
+		        {!!Form::open(array('url'=>"organization/addCourses",'method' => 'post'))!!}
+		        	<?php
+		        	$affiliate = null;
+		        	$stream = null;
+		        	$level = null;
+		        	?>
+		          @foreach($courses as $course)
+		          		<?php
+		          			if($affiliate != $course->affiliate['name']){
+		          				echo $course->affiliate['name']."<br>";
+		          				$affiliate = $course->affiliate['name'];
+		          			}
 
-	    </div>
-	  </div>
+		          			if($stream != $course->stream['name']){
+		          				echo $course->stream['name']."<br>";
+		          				$stream = $course->stream['name'];
+		          			}
+		          			if($level != $course->level['name']){
+		          				echo $course->level['name']."<br>";
+		          				$level = $course->level['name'];
+		          			}
+		          		?>
+		          		<div class="checkbox">
+		          		  <label>
+		          		  <input name="courses[]" type="checkbox" value="{{$course->id}}">{{$course->name}}</label>
+		          		</div>	
+		          @endforeach
+		          <button>UPDATE</button>
+		         {!!Form::close()!!} 
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
 
 @endsection

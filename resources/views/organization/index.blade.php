@@ -35,6 +35,8 @@
                 @if($organization)
                 <h2>{{$organization->name}}</h2>
                 <p>{{$organization->description}}</p>
+                @else
+                Organnization name is not Inserted.
                 @endif
             </div>
             <div class="span6">

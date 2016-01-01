@@ -20,7 +20,8 @@ class OrganizationController extends Controller
     public function index()
     {
         $organization = Organization::where('userId',Auth::user()->id)->first();
-        return view('organization.index')->with('organization',$organization);
+        $crs = Course::orderBy('affiliateId','DESC')->orderBy('streamId','DESC')->orderBy('levelId','DESC')->get();
+        return view('organization.index')->with('organization',$organization)->with('courses',$crs);
     }
 
     /**
