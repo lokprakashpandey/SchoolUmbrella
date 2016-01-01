@@ -96,7 +96,7 @@
                             <li>
                                 <i class="icon-envelope"></i>
                                 <strong>Email: </strong> 
-                                <a data-toggle="modal" data-target="#contactModal">
+                                <a href="#contactModal" data-toggle="modal" data-target="#contactModal">
                                 admin@schoolumbrella.com</a>
                             </li>
                             <li>
@@ -256,10 +256,13 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Update Courses</h4>
+                  <h4 class="modal-title">To: admin@schoolumbrella.com</h4>
                 </div>
                 <div class="modal-body">
-                
+                {!!Form::open(array('url'=>"email",'method' => 'post'))!!}
+                Message: <textarea rows="20" cols="50"></textarea>    
+                <button>Send Mail</button>
+                {!!Form::close()!!}
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

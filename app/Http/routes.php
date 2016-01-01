@@ -72,3 +72,5 @@ Route::group(['middleware'=>'admin','prefix' => 'myAdmin'], function(){
 Route::controllers([
 		'auth' => 'Auth\AuthController',
 		]);
+
+Route::post('email','EmailController@index');
