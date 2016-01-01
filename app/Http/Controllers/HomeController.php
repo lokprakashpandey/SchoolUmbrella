@@ -111,7 +111,7 @@ class HomeController extends Controller
             //return Auth::user(); // Auth::user() where user() is built-in methode
 
             if (Auth::user()->user_typeId == 1)
-                return redirect('admin'); //Redirects into Admin Route
+                return redirect('myAdmin'); //Redirects into Admin Route
 
 
             if(Auth::user()->user_typeId == 5){

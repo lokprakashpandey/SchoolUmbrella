@@ -10,4 +10,7 @@ class Affiliate extends Model
     public function country(){
     	return $this->belongsTo('App\Country','countryId');
     }
+    public function courses(){
+    	return $this->hasMany('App\Course','affiliateId');
+    }
 }
