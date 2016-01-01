@@ -96,7 +96,7 @@
                             <li>
                                 <i class="icon-envelope"></i>
                                 <strong>Email: </strong> 
-                                <a data-toggle="modal" data-target="#contactModal">
+                                <a href="contactModal" data-toggle="modal" data-target="#contactModal">
                                 admin@schoolumbrella.com</a>
                             </li>
                             <li>
