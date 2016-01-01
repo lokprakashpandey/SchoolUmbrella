@@ -19,7 +19,6 @@
 	  <!-- / .title -->
 
 	<section id="registration-page" class="container">
-
 		@if(session('success_message'))
 		  {{session('success_message')}}
 		@endif
@@ -94,7 +93,26 @@
 	        </div>
 	        <div class="modal-body">
 	        {!!Form::open(array('url'=>"organization/addCourses",'method' => 'post'))!!}
+	        <?php 
+	        	$affiliate = null;
+	        	$stream = null;
+	        	$level = null;
+	        ?>
 	          @foreach($courses as $course)
+	          	<?php
+	          		if($affiliate  != $course->affiliate['name']){
+	          			echo $course->affiliate['name']."<br>";
+	          			$affiliate = $course->affiliate['name'];
+	          		}
+	          		if($stream != $course->stream['name']){
+	          			echo $course->stream['name']."<br>";
+	          			$stream = $course->stream['name'];
+	          		}
+	          		if($level != $course->level['name']){
+	          			echo $course->level['name'];
+	          			$level = $course->level['name'];
+	          		}
+	          	 ?>
 	          		<div class="checkbox">
 	          		  <label>
 	          		  <input name="courses[]" type="checkbox" value="{{$course->id}}">{{$course->name}}</label>

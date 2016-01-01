@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Organization;
 use Auth;
 use App\Course;
+use App\Affiliate;
 
 class OrganizationController extends Controller
 {
@@ -64,8 +65,7 @@ class OrganizationController extends Controller
     public function edit()
     {
         $organization = Organization::where('userId',Auth::user()->id)->first();
-        $crs = Course::all();
-        //return courses all data
+        $crs = Course::orderBy('affiliateId', 'DESC')->orderBy('streamId','DESC')->orderBy('levelId','DESC')->get();
         return view('organization.edit')->with('organization',$organization)->with('courses',$crs);
     }
 
