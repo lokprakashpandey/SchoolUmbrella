@@ -10,6 +10,8 @@ use App\Organization;
 use Auth;
 use App\Course;
 use App\Affiliate;
+use App\Organization_course;
+use App\Organization_profile;
 
 class OrganizationController extends Controller
 {
@@ -113,6 +115,16 @@ class OrganizationController extends Controller
     }
     public function addCourses(Request $request){
         
+        $org_profile = Organization_profile::where('userId',Auth::user()->id)->first();
+        // $courses = array();
+        foreach ($request['courses'] as $key => $courseId) {
+            $org_crs = new Organization_course;
+            $org_crs->organizationId = $org_profile->id;
+            $org_crs->courseId = $courseId;
+            $org_crs->save();
+        }
+        
+
         return $request['courses'];
     }
 }
