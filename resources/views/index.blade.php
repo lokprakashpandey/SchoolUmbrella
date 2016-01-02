@@ -12,6 +12,7 @@
     {!!Html::style('css/font-awesome.min.css')!!}
     {!!Html::style('css/main.css')!!}
     {!!Html::style('css/sl-slide.css')!!}
+    {!!Html::style('css/captcha.css')!!}
     <!-- yasari laravel ma css haru load garne
     -->
 
@@ -259,8 +260,20 @@
                   <h4 class="modal-title">To: admin@schoolumbrella.com</h4>
                 </div>
                 <div class="modal-body">
+
+                {!!Form::open(array('url'=>"example",'method' => 'post'))!!}
+                  {!! csrf_field() !!}
+                  {!! $captchaHtml !!}
+                  <input type="text" id="CaptchaCode" name="CaptchaCode">
+                  <button type="submit">Submit</button>
+                {!!Form::close()!!}
+
+                <br>
+
                 {!!Form::open(array('url'=>"email",'method' => 'post'))!!}
-                Message: <textarea rows="20" cols="50"></textarea>    
+                Message:<br/> 
+                <textarea rows="10" cols="40"></textarea>   
+                <br/>
                 <button>Send Mail</button>
                 {!!Form::close()!!}
                 </div>

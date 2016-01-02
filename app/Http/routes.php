@@ -74,3 +74,6 @@ Route::controllers([
 		]);
 
 Route::post('email','EmailController@index');
+
+Route::get('example', 'ExampleController@getExample');
+Route::post('example', 'ExampleController@postExample');
