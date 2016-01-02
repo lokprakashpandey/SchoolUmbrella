@@ -19,6 +19,8 @@ class CreateOrganizationCoursesTable extends Migration
             $table->foreign('organizationId')->references('id')->on('organization_profiles');
             $table->integer('courseId')->unsigned();
             $table->foreign('courseId')->references('id')->on('courses');
+            $table->integer('min_cost');
+            $table->integer('max_cost');
         });
     }
 

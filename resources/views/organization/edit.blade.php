@@ -116,7 +116,11 @@
 	          		<div class="checkbox">
 	          		  <label>
 	          		  <input name="courses[]" type="checkbox" value="{{$course->id}}">{{$course->name}}</label>
+
 	          		</div>	
+	          		<div>
+	          			
+	          		</div>
 	          @endforeach
 	          <button>UPDATE</button>
 	         {!!Form::close()!!} 
