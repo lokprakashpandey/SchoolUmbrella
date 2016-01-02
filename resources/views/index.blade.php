@@ -278,6 +278,7 @@
     <!-- /Required javascript files for Slider -->
 
     <!-- SL Slider -->
+    {!!Html::script('js/custom.js')!!}
     <script type="text/javascript"> 
     $(function() {
         var Page = (function() {
@@ -308,6 +309,7 @@
 
         Page.init();
     });
-    </script>    
+    </script>   
+
     </body>
 </html>
