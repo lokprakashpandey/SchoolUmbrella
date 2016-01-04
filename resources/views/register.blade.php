@@ -22,27 +22,50 @@
 	    <!-- <form class="center" action='' method="POST"> -->
 	    {!!Form::open(array('url'=>'register','method'=>'post','class'=>'center'))!!}
 	      <fieldset class="registration-form">
-	      	
 	      	<div class="control-group">
-	          <!-- Firstname -->
+	          <!-- Member Type-->
 	          <div class="controls">
-	            <input type="text"  name="fname" placeholder="Firstname" class="input-xlarge">
+	          <label>User Type</label>
+	            <select onchange="changeUserType()" id="user_typeId" name="user_typeId" class="input-xlarge"> 
+	            	<option value="2">Student</option>
+	            	<option value="3">Parent</option>
+	            	<option value="4">Teacher</option>
+	            	<option value="5">Organization</option>
+	            </select> 
 	          </div>
 	        </div>
+	      	<div id="extraInfo">
+	      			<div class="control-group">
+	      		    <!-- Firstname -->
+	      		    <div class="controls">
+	      		      <input type="text"  name="fname" placeholder="Firstname" class="input-xlarge">
+	      		    </div>
+	      		  </div>
 
-	        <div class="control-group">
-	          <!-- Middlename -->
-	          <div class="controls">
-	            <input type="text"  name="mname" placeholder="Middlename" class="input-xlarge">
-	          </div>
-	        </div>
+	      		  <div class="control-group">
+	      		    <!-- Middlename -->
+	      		    <div class="controls">
+	      		      <input type="text"  name="mname" placeholder="Middlename" class="input-xlarge">
+	      		    </div>
+	      		  </div>
 
-	        <div class="control-group">
-	          <!-- Lastname -->
-	          <div class="controls">
-	            <input type="text"  name="lname" placeholder="Lastname" class="input-xlarge">
-	          </div>
-	        </div>
+	      		  <div class="control-group">
+	      		    <!-- Lastname -->
+	      		    <div class="controls">
+	      		      <input type="text"  name="lname" placeholder="Lastname" class="input-xlarge">
+	      		    </div>
+	      		  </div>
+	      		  <div class="control-group">
+	      		    <!-- Gender -->
+	      		    <div class="controls">
+	      		      <label> <input type="radio" value="f" name="gender" class="input-xlarge">Female </label>
+	      		      <label> <input type="radio" value="m" name="gender" class="input-xlarge">Male </label>
+	      		      <label> <input type="radio" value="o" name="gender" class="input-xlarge">Others </label>
+	      		    </div>
+	      		  </div>
+	      	</div>
+	      	
+	      	
 
 	        <div class="control-group">
 	          <!-- Username -->
@@ -58,27 +81,9 @@
 	          </div>
 	        </div>
 
-	        <div class="control-group">
-	          <!-- Gender -->
-	          <div class="controls">
-	            <label> <input type="radio" value="f" name="gender" class="input-xlarge">Female </label>
-	            <label> <input type="radio" value="m" name="gender" class="input-xlarge">Male </label>
-	            <label> <input type="radio" value="o" name="gender" class="input-xlarge">Others </label>
-	          </div>
-	        </div>
+	        
 
-	        <div class="control-group">
-	          <!-- Member Type-->
-	          <div class="controls">
-	          <label>User Type</label>
-	            <select name="user_typeId" class="input-xlarge"> 
-	            	<option value="2">Student</option>
-	            	<option value="3">Parent</option>
-	            	<option value="4">Teacher</option>
-	            	<option value="5">Organization</option>
-	            </select> 
-	          </div>
-	        </div>
+	        
 
 	        <div class="control-group">
 	          <!-- Password-->
