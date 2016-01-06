@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\User_profile;
 use Auth; // Auth class is in root location
 
 class HomeController extends Controller
@@ -29,16 +30,29 @@ class HomeController extends Controller
     public function create(Request $request)
     {
         $user= new User;
-        $user->fname = $request['fname'];
-        $user->mname = $request['mname'];
-        $user->lname = $request['lname'];
         $user->username = $request['username'];
-        $user->email = $request['email'];
-        $user->gender = $request['gender'];
+        $user->email = $request['email']; 
         $user->password = bcrypt($request['password']);
         $user->ip= $request->ip();
         $user->user_typeId= $request['user_typeId'];
         $user->save();
+        
+        if($user->user_typeId == 5){
+            $org_profile =new Organization_profile;
+            $org_profile->name = $request[''];
+            $org_profile->address = $request[''];
+            $org_profile->description = $request[''];
+            $org_profile->bochure = $request[''];
+        }
+        else{
+            $user_profile = new User_profile;
+            $user_profile->userId = $user->id;
+            $user_profile->fname = $request['fname'];
+            $user_profile->mname = $request['mname'];
+            $user_profile->lname = $request['lname'];
+            $user_profile->gender = $request['gender'];
+            $user_profile->save();
+        }
         return redirect('');
         
     }

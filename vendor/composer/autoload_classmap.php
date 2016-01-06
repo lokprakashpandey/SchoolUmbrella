@@ -16,6 +16,7 @@ return array(
     'CreateOrganizationProfilesTable' => $baseDir . '/database/migrations/2015_12_09_015910_create_organization_profiles_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateStreamsTable' => $baseDir . '/database/migrations/2015_12_11_033316_create_streams_table.php',
+    'CreateUserProfilesTable' => $baseDir . '/database/migrations/2016_01_06_085247_create_user_profiles_table.php',
     'CreateUserTypesTable' => $baseDir . '/database/migrations/2015_11_27_035207_create_user_types_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2015_11_27_044402_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
