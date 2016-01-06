@@ -34,6 +34,14 @@
 	            </select> 
 	          </div>
 	        </div>
+	        <div id="forOrg">
+	        	<div class="control-group">
+	      		    <!-- Firstname -->
+	      		    <div class="controls">
+	      		      <input type="text"  name="org_name" placeholder="Org name" class="input-xlarge">
+	      		    </div>
+	      		  </div>
+	        </div>
 	      	<div id="extraInfo">
 	      			<div class="control-group">
 	      		    <!-- Firstname -->
