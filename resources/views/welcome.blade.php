@@ -1,5 +1,12 @@
 @extends('index')
 @section('content')
+    @if(session('sucess_message'))
+        {{session('sucess_message')}}
+    @endif
+
+    @if(session('error_message'))
+        {{session('error_message')}}
+    @endif
         <!--Slider-->
         <section id="slide-show">
          <div id="slider" class="sl-slider-wrapper">

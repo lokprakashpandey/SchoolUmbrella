@@ -34,13 +34,39 @@
 	            </select> 
 	          </div>
 	        </div>
-	        <div id="forOrg">
+	        <div id="organizationInfo">
 	        	<div class="control-group">
-	      		    <!-- Firstname -->
-	      		    <div class="controls">
-	      		      <input type="text"  name="org_name" placeholder="Org name" class="input-xlarge">
-	      		    </div>
-	      		  </div>
+	        	    <!-- Firstname -->
+	        	    <div class="controls">
+	        	   
+	        	    <input type="text"  value="" name="name" placeholder="Name" class="input-xlarge">
+	        	   
+	        	    </div>
+	        	 </div>
+
+	        	  <div class="control-group">
+	        	    
+	        	    <div class="controls">
+	        	    	
+	        	    <input type="text"  name="address" value="" placeholder="Address" class="input-xlarge">
+	        	    
+	        	    </div>
+	        	  </div>
+
+	        	  <div class="control-group">
+
+	        	    <div class="controls">
+	        	      	<textarea  rows="10" cols="20" name="description" placeholder="Description" class="input-xlarge">
+	        	      	
+	        	    	</textarea>
+	        	    </div>
+	        	  </div>
+
+	        	  <div class="control-group">
+	        	    <div class="controls">
+	        	      <input type="file" name="brochure" class="input-xlarge">
+	        	    </div>
+	        	  </div>
 	        </div>
 	      	<div id="extraInfo">
 	      			<div class="control-group">
@@ -73,8 +99,6 @@
 	      		  </div>
 	      	</div>
 	      	
-	      	
-
 	        <div class="control-group">
 	          <!-- Username -->
 	          <div class="controls">

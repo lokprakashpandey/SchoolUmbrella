@@ -24,9 +24,9 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
-    #forOrg{
-        display: none;
-    }
+        #organizationInfo{
+            display: none;
+        }
     </style>
 </head>
     <body>
@@ -44,9 +44,9 @@
                         <div class="nav-collapse collapse pull-right">
                             <ul class="nav">
                                 <li class="active"><a href="{{url()}}">Home</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Portfolio</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
                                     <ul class="dropdown-menu">
@@ -62,8 +62,8 @@
                                         <li><a href="terms.html">Terms of Use</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="blog.html">Blog</a></li> 
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="#">Blog</a></li> 
+                                <li><a href="#">Contact</a></li>
                                 @if(Auth::check())
                                     <li class="login">
                                     <a data-toggle="modal" href="{{url('auth/logout')}}"><i class="icon-lock"></i></a>
