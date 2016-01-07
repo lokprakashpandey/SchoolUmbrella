@@ -22,6 +22,9 @@ class CreateCoursesTable extends Migration
             $table->foreign('streamId')->references('id')->on('streams');
             $table->integer('levelId')->unsigned();
             $table->foreign('levelId')->references('id')->on('levels');
+            $table->enum('courseType',['y','s']);
+            $table->integer('duration');
+            $table->timestamps();
         });
     }
 
