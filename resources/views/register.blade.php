@@ -45,7 +45,7 @@
 	        	 </div>
 
 	        	  <div class="control-group">
-	        	    <!-- Middlename -->
+	        	    
 	        	    <div class="controls">
 	        	    	
 	        	    <input type="text"  name="address" value="" placeholder="Address" class="input-xlarge">
@@ -54,22 +54,20 @@
 	        	  </div>
 
 	        	  <div class="control-group">
-	        	    <!-- Lastname -->
 
 	        	    <div class="controls">
-	        	      <textarea  rows="10" cols="20" name="description" placeholder="Description" class="input-xlarge">
+	        	      	<textarea  rows="10" cols="20" name="description" placeholder="Description" class="input-xlarge">
 	        	      	
 	        	    	</textarea>
 	        	    </div>
 	        	  </div>
 
 	        	  <div class="control-group">
-	        	    <!-- Username -->
 	        	    <div class="controls">
 	        	      <input type="file" name="brochure" class="input-xlarge">
 	        	    </div>
 	        	  </div>
-	       	</div>
+	        </div>
 	      	<div id="extraInfo">
 	      			<div class="control-group">
 	      		    <!-- Firstname -->
@@ -101,8 +99,6 @@
 	      		  </div>
 	      	</div>
 	      	
-	      	
-
 	        <div class="control-group">
 	          <!-- Username -->
 	          <div class="controls">

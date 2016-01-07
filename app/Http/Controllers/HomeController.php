@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\User_profile;
+use App\Organization_profile;
 use Auth; // Auth class is in root location
 
 class HomeController extends Controller
@@ -39,10 +40,15 @@ class HomeController extends Controller
         
         if($user->user_typeId == 5){
             $org_profile =new Organization_profile;
-            $org_profile->name = $request[''];
-            $org_profile->address = $request[''];
-            $org_profile->description = $request[''];
-            $org_profile->bochure = $request[''];
+            $org_profile->userId = $user->id;
+            $org_profile->name = $request['name'];
+            $org_profile->address = $request['address'];
+            $org_profile->description = $request['description'];
+            if($request['brochure']){
+                $org_profile->brochure = $request['brochure'];
+            }
+            $org_profile->save();
+            \Session::flash('sucess_message','Organization Regestration Completed !');
         }
         else{
             $user_profile = new User_profile;
@@ -52,6 +58,7 @@ class HomeController extends Controller
             $user_profile->lname = $request['lname'];
             $user_profile->gender = $request['gender'];
             $user_profile->save();
+            \Session::flash('sucess_message','User Regestration Completed !');
         }
         return redirect('');
         
