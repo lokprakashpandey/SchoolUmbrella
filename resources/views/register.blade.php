@@ -34,6 +34,7 @@
 	            </select> 
 	          </div>
 	        </div>
+<<<<<<< HEAD
 	        <div id="organizationInfo">
 	        	<div class="control-group">
 	        	    <!-- Firstname -->
@@ -69,6 +70,15 @@
 	        	      <input type="file" name="brochure" class="input-xlarge">
 	        	    </div>
 	        	  </div>
+=======
+	        <div id="forOrg">
+	        	<div class="control-group">
+	      		    <!-- Firstname -->
+	      		    <div class="controls">
+	      		      <input type="text"  name="org_name" placeholder="Org name" class="input-xlarge">
+	      		    </div>
+	      		  </div>
+>>>>>>> ccf8bd3e9f413f5de36b37cd25baac87f310795c
 	        </div>
 	      	<div id="extraInfo">
 	      			<div class="control-group">
