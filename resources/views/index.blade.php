@@ -24,15 +24,9 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
-<<<<<<< HEAD
         #organizationInfo{
             display: none;
         }
-=======
-    #forOrg{
-        display: none;
-    }
->>>>>>> ccf8bd3e9f413f5de36b37cd25baac87f310795c
     </style>
 </head>
     <body>
