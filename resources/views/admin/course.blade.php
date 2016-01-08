@@ -15,6 +15,7 @@
 			<td>Stream</td>
 			<td>Level</td>
 			<td>Course</td>
+			<td>Course Duration</td>
 		</tr>
 		@foreach($courses as $index => $course)
 		<tr>
@@ -22,7 +23,14 @@
 			<td>{{$course->affiliate['name']}}</td>
 			<td>{{$course->stream['name']}}</td>
 			<td>{{$course->level['name']}}</td>
-			<td>{{$course->name}}</td>	
+			<td>{{$course->name}}</td>
+			<td>
+				@if($course->courseType == 's')
+					{{$course->duration}}	Semester
+				@else
+					{{$course->duration}}	Year
+				@endif
+			</td>	
 
 			<td><a href='{{url("myAdmin/courses/del/$course->id")}}'>Del</a></td>
 			<td><a href="{{url('myAdmin/courses/edit')}}/{{$course->id}}">Edit</a></td>

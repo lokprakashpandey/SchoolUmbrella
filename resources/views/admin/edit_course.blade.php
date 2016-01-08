@@ -36,6 +36,18 @@
 		        	@endforeach
 		        </select>
 		    </div>
+		    <div>
+		       <label>Couse Type</label>
+		        <select name="courseType" class="input-xlarge"> 
+		        	<option>Select Type</option>
+		        	<option <?php if($course->courseType == 's'){echo 'selected';} ?> value="s">Semester</option>
+		        	<option <?php if($course->courseType == 'y'){echo 'selected';} ?> value="y">Year</option>
+		        </select>
+		    </div>
+		    <div>
+		    <label>Course Duration</label>
+		        <input placeholder="Duration" name="duration" value="{{$course->duration}}" type="number">
+		    </div>
 		    
 		    <!-- Change this to a button or input when using this as a form -->
 		    <button>Update</button> 
