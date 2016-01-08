@@ -50,6 +50,8 @@ class CourseController extends Controller
         $crs->affiliateId = $request['affiliateId'];
         $crs->streamId = $request['streamId'];
         $crs->levelId = $request['levelId'];
+        $crs->courseType = $request['courseType'];
+        $crs->duration = $request['duration'];
         $crs->save();
         \Session::flash('sucess_message','Course is sucessfully created.');
         return redirect('myAdmin/courses');
@@ -96,6 +98,8 @@ class CourseController extends Controller
         $crs->affiliateId = $request['affiliateId'];
         $crs->streamId = $request['streamId'];
         $crs->levelId = $request['levelId'];
+        $crs->courseType = $request['courseType'];
+        $crs->duration = $request['duration'];
         $crs->save();
         \Session::flash('sucess_message','Course is sucessfully UPDATED.');
         return redirect('myAdmin/courses');

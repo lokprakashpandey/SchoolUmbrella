@@ -36,6 +36,18 @@
 		        	@endforeach
 		        </select>
 		    </div>
+		    <div>
+		       <label>Couse Type</label>
+		        <select name="courseType" class="input-xlarge"> 
+		        	<option>Select Type</option>
+		        	<option value="s">Semester</option>
+		        	<option value="y">Year</option>
+		        </select>
+		    </div>
+		    <div>
+		    <label>Course Duration</label>
+		        <input placeholder="Duration" name="duration" type="number">
+		    </div>
 		    
 		    <!-- Change this to a button or input when using this as a form -->
 		    <button>Add</button> 
