@@ -9,8 +9,6 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Auth; // Auth class is in root location
 
-// Importing the BotDetectCaptcha class
-use LaravelCaptcha\Integration\BotDetectCaptcha;
 
 class HomeController extends Controller
 {
@@ -19,26 +17,12 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    private function getExampleCaptchaInstance() 
-      {
-        // Captcha parameters
-        $captchaConfig = [
-          'CaptchaId' => 'ExampleCaptcha', // a unique Id for the Captcha instance
-          'UserInputId' => 'CaptchaCode', // Id of the Captcha code input textbox
-          // The path of the Captcha config file is inside the config folder
-          'CaptchaConfigFilePath' => 'captcha_config/ExampleCaptchaConfig.php'
-        ];
-        return BotDetectCaptcha::GetCaptchaInstance($captchaConfig);
-      }
 
     public function index()
     {
         //return view('welcome')->with;
 
-        $captcha = $this->getExampleCaptchaInstance();
-
-        // passing Captcha Html to example view
-        return view('welcome', ['captchaHtml' => $captcha->Html()]);
+        return view('welcome');
     }
 
     /**

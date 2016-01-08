@@ -20,7 +20,7 @@ class ExampleController extends Controller
           'CaptchaId' => 'ExampleCaptcha', // a unique Id for the Captcha instance
           'UserInputId' => 'CaptchaCode', // Id of the Captcha code input textbox
           // The path of the Captcha config file is inside the config folder
-          'CaptchaConfigFilePath' => 'captcha_config/ExampleCaptchaConfig.php'
+          //'CaptchaConfigFilePath' => 'captcha_config/ExampleCaptchaConfig.php'
         ];
         return BotDetectCaptcha::GetCaptchaInstance($captchaConfig);
       }
