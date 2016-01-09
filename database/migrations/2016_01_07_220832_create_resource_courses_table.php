@@ -18,6 +18,7 @@ class CreateResourceCoursesTable extends Migration
             $table->foreign('resourceId')->references('id')->on('resources');
             $table->integer('courseId')->unsigned();
             $table->foreign('courseId')->references('id')->on('courses');
+            $table->string('semesters');
         });
     }
 

@@ -133,9 +133,10 @@ class HomeController extends Controller
 
             if (Auth::user()->user_typeId == 1)
                 return redirect('myAdmin'); //Redirects into Admin Route
-
-
-            if(Auth::user()->user_typeId == 5){
+            elseif(Auth::user()->user_typeId == 4){
+                return redirect('teacher'); //Redirect into  organization route
+            }
+            elseif(Auth::user()->user_typeId == 5){
                 return redirect('organization'); //Redirect into  organization route
             }
             return redirect(''); // Redirects into index page/Route
