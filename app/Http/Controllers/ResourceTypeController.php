@@ -18,7 +18,7 @@ class ResourceTypeController extends Controller
     public function index()
     {
        $resourceTypes = Resource_type::all();
-       return view('admin/resource_type')->with('resourceType',$resourceTypes);
+       return view('admin/resource_type')->with('resourceTypes',$resourceTypes);
     }
 
     /**
@@ -28,7 +28,7 @@ class ResourceTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/resourceTypeAdd');
     }
 
     /**
@@ -39,7 +39,16 @@ class ResourceTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $rsType = new Resource_type;
+            $rsType->name = $request['name'];
+            $rsType->save();
+            \Session::flash('sucess_message','ResourceType is created Sucessfully!');
+        }catch(\Exception $e){
+            \Session::flash('error_message','Oops !! ResourceType is not created.');
+        }
+
+        return redirect('myAdmin/resourceTypes');
     }
 
     /**
@@ -61,7 +70,8 @@ class ResourceTypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rsType = Resource_type::find($id);
+        return view('admin/edit_resourceType')->with('resourceType',$rsType);
     }
 
     /**
@@ -73,7 +83,10 @@ class ResourceTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rsType = Resource_type::find($id);
+        $rsType->name = $request['rname'];
+        $rsType->save();
+        return redirect('myAdmin/resourceTypes');
     }
 
     /**
@@ -84,6 +97,8 @@ class ResourceTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rsType = Resource_type::find($id);
+        $rsType->delete();
+        return redirect('myAdmin/resourceTypes');
     }
 }
