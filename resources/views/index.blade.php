@@ -206,7 +206,6 @@
                     <!--/Copyright-->
 
                     <div class="span6">
-                    {!! $captchaHtml !!}
                         <ul class="social pull-right">
                             <li><a href="#"><i class="icon-facebook"></i></a></li>
                             <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -268,7 +267,7 @@
                 <div class="modal-body">
 
                 {!!Form::open(array('url'=>"example",'method' => 'post'))!!}
-                  {!! csrf_field() !!}
+                  {!! $captchaHtml !!}
                   
                   <input type="text" id="CaptchaCode" name="CaptchaCode">
                   <button type="submit">Submit</button>
@@ -277,6 +276,7 @@
                 <br>
 
                 {!!Form::open(array('url'=>"email",'method' => 'post'))!!}
+                {!! csrf_field() !!}
                 Message:<br/> 
                 <textarea rows="10" cols="40"></textarea>   
                 <br/>
