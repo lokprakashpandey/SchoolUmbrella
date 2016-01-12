@@ -40,7 +40,6 @@ class AppServiceProvider extends ServiceProvider
 
         $captcha = BotDetectCaptcha::GetCaptchaInstance($captchaConfig);
 
-dd($captcha->Html());
          view()->share('captchaHtml', $captcha->Html());
         //
        // view()->share('captchaHtml', $captcha->Html());
