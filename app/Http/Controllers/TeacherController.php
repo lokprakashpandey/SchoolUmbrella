@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Auth;
+use App\User,App\Resource_type,App\Course;
+
 
 class TeacherController extends Controller
 {
@@ -16,8 +19,10 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teacher = Teacher::where('userId',Auth::user()->id)->first();
-        return view('teacher')->with('teacher',$teacher);
+        $teacher = User::find(Auth::user()->id);
+        $resourceTypes = Resource_type::all();
+        $courses = $crs = Course::orderBy('affiliateId', 'DESC')->orderBy('streamId','DESC')->orderBy('levelId','DESC')->get();
+        return view('teacher')->with('teacher',$teacher)->with('resourceTypes',$resourceTypes)->with('courses',$courses);
     }
 
     /**
