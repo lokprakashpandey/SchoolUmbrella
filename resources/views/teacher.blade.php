@@ -43,7 +43,7 @@
 	            <h4 class="modal-title">Add Resource</h4>
 	          </div>
 	          <div class="modal-body">
-	          	{!!Form::open(array('url' => 'teacher/resourceAdd','method' => 'post'))!!}
+	          	{!!Form::open(array('url' => 'teacher/resourceAdd','method' => 'post', 'enctype' => 'multipart/form-data'))!!}
 	          	
 	          	<div class="controls">
 	          	<label>Resource Type</label>
@@ -106,24 +106,18 @@
 	          	  	</div>
 	          	  @endforeach 
 	          	</div>
-
-	          	<div class="controls">
-	          		<label>Name</label>
-	          		<input type="text" name="name" class="input-xlarge">
-	          	</div>
-	          	<div class="controls">
-	          		<label>File</label>
-	          		<input type="file" name="file" class="input-xlarge">
-	          	</div>
-
-	          	<div class="controls">
-	          		<label>Order</label>
-	          		<input type="file" name="file" class="input-xlarge">
-	          	</div>
-	          	<div class="controls">
-	          		<label>Name</label>
-	          		<input type="text" name="name" class="input-xlarge">
-	          	</div>
+		          	<div class="controls">
+		          		<label>Name</label>
+		          		<input type="text" name="name" class="input-xlarge">
+		          	</div>
+		          	<div class="controls">
+		          		<label>File</label>
+		          		<input type="file" name="file" class="input-xlarge">
+		          	</div>
+		          	<div class="controls">
+		          		<label>Order</label>
+		          		<input type="number" name="order" class="input-xlarge">
+		          	</div>
 	          	</div>
 	          	<button>Add</button> 
 	          	{!!Form::close()!!}

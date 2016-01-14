@@ -10,6 +10,7 @@ use Auth;
 use App\User,App\Resource_type,App\Course;
 use App\Resource;
 use App\Resource_course;
+use App\Resource_file;
 
 
 class TeacherController extends Controller
@@ -55,11 +56,21 @@ class TeacherController extends Controller
             $rescrs = new Resource_course;
             $rescrs->resourceId = $res->id;
             $rescrs->courseId= $key;
-            $rescrs->semester = $value[0];
-           
-        }
-        
-        
+            $rescrs->semesters = $value[0];
+            $rescrs->save();
+        }   
+
+        $resfile = new Resource_file;
+        $resfile->name = $request['name'];
+        $resfile->order = $request['order'];
+            
+        $name = time().".".$request->file('file')->getClientOriginalExtension();
+        $dest = base_path()."/public/uploads/resources/";
+        $request->file('file')->move($dest,$name);
+        $resfile->file = $name;
+         
+        $resfile->resourceId = $res->id;
+        $resfile->save();
         \Session::flash('sucess_message','Resource material is sucessfully stored');
         return redirect('teacher');
     }
