@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\User,App\Resource_type,App\Course;
+use App\Resource;
+use App\Resource_course;
 
 
 class TeacherController extends Controller
@@ -43,7 +45,23 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $res = new Resource;
+        $res->description = $request['description'];
+        $res->teacherId = Auth::user()->id;
+        $res->resource_typeId = $request['resource_typeId'];
+        $res->save();
+
+        foreach ($request['semesters'] as $key => $value) {
+            $rescrs = new Resource_course;
+            $rescrs->resourceId = $res->id;
+            $rescrs->courseId= $key;
+            $rescrs->semester = $value[0];
+           
+        }
+        
+        
+        \Session::flash('sucess_message','Resource material is sucessfully stored');
+        return redirect('teacher');
     }
 
     /**

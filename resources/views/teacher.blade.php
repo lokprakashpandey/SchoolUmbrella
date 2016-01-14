@@ -1,5 +1,14 @@
 @extends('index')
 @section('content')
+
+	@if(session('sucess_message'))
+        {{session('sucess_message')}}
+    @endif
+
+    @if(session('error_message'))
+        {{session('error_message')}}
+    @endif
+
 	  <section class="title">
 	    <div class="container">
 	      <div class="row-fluid">
@@ -34,7 +43,7 @@
 	            <h4 class="modal-title">Add Resource</h4>
 	          </div>
 	          <div class="modal-body">
-	          	{!!Form::open()!!}
+	          	{!!Form::open(array('url' => 'teacher/resourceAdd','method' => 'post'))!!}
 	          	
 	          	<div class="controls">
 	          	<label>Resource Type</label>
@@ -79,7 +88,7 @@
 	          	  				?>
 	          	  				
 	          	  				  <label>
-	          	  				  <input name="semesters[]" type="checkbox" value="{{$i+1}}">{{$i+1}} Semester</label>
+	          	  				  <input name="semesters[{{$course->id}}][]" type="radio" value="{{$i+1}}">{{$i+1}} Semester</label>
 
 	          	  				<?php
 	          	  			}
@@ -88,7 +97,7 @@
 	          	  			for($i = 0; $i < $course->duration; $i++){
 	          	  				?>
 	          	  				  <label>
-	          	  				  <input name="semesters[]" type="checkbox" value="{{$i+1}}">{{$i+1}} Year</label>
+	          	  				  <input name="semesters[]" type="radio" value="{{$i+1}}">{{$i+1}} Year</label>
 
 	          	  				<?php
 	          	  			}
@@ -97,6 +106,7 @@
 	          	  	</div>
 	          	  @endforeach 
 	          	</div>
+	          	<button>Add</button> 
 	          	{!!Form::close()!!}
 	          </div>
 	          <div class="modal-footer">

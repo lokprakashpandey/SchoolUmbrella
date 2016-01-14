@@ -34,9 +34,11 @@ Route::group(['middleware'=>'student'], function(){
 	Route::get('student','StudentController@index');	
 });
 
-Route::group(['middleware'=>'teacher'], function(){
-	Route::get('teacher','TeacherController@index');	
+Route::group(['middleware'=>'teacher','prefix' =>'teacher'], function(){
+	Route::get('','TeacherController@index');
+	Route::post('/resourceAdd','TeacherController@store');	
 });
+
 Route::group(['middleware'=>'admin','prefix' => 'myAdmin'], function(){
 	Route::get('','AdminController@home');
 	Route::get('edit','AdminController@edit');
