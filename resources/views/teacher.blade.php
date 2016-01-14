@@ -106,6 +106,25 @@
 	          	  	</div>
 	          	  @endforeach 
 	          	</div>
+
+	          	<div class="controls">
+	          		<label>Name</label>
+	          		<input type="text" name="name" class="input-xlarge">
+	          	</div>
+	          	<div class="controls">
+	          		<label>File</label>
+	          		<input type="file" name="file" class="input-xlarge">
+	          	</div>
+
+	          	<div class="controls">
+	          		<label>Order</label>
+	          		<input type="file" name="file" class="input-xlarge">
+	          	</div>
+	          	<div class="controls">
+	          		<label>Name</label>
+	          		<input type="text" name="name" class="input-xlarge">
+	          	</div>
+	          	</div>
 	          	<button>Add</button> 
 	          	{!!Form::close()!!}
 	          </div>
