@@ -15,10 +15,8 @@
 			<td>Name</td>
 		</tr>
 		@foreach($levels as $index => $level) 
-		
 		<tr>
  			<td>{{$index+1}}</td>
-			
 			<td>{{$level->name}}</td>
 			<td> <a href="{{url('myAdmin/levels/del')}}/{{$level->id}}">Del</a> </td>
 			<td> <a href="{{url('myAdmin/levels/edit')}}/{{$level->id}}">Edit</a></td>

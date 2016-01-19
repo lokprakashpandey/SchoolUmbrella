@@ -1,5 +1,6 @@
 @extends('index')
 @section('content')
+		
 	  <section class="title">
 	    <div class="container">
 	      <div class="row-fluid">

@@ -68,6 +68,13 @@ Route::group(['middleware'=>'admin','prefix' => 'myAdmin'], function(){
 	Route::get('courses/edit/{id}','CourseController@edit');
 	Route::post('courses/edit/{id}','CourseController@update');
 	Route::get('courses/del/{id}','CourseController@destroy');
+
+	Route::get('resourceTypes','ResourceTypeController@index');
+	Route::get('resourceTypes/add','ResourceTypeController@create');
+	Route::post('resourceTypes/add','ResourceTypeController@store');
+	Route::get('resourceTypes/edit/{id}','ResourceTypeController@edit');
+	Route::post('resourceTypes/edit/{id}','ResourceTypeController@update');
+	Route::get('resourceTypes/del/{id}','ResourceTypeController@destroy');
 });
 
 Route::controllers([

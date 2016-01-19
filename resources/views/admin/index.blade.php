@@ -300,8 +300,11 @@
                         <li>
                             <a href="{{url('myAdmin/streams')}}"><i class="fa fa-edit fa-fw"></i> Streams</a>
                         </li>
-                            <li>
+                        <li>
                             <a href="{{url('myAdmin/courses')}}"><i class="fa fa-edit fa-fw"></i> Courses</a>
+                        </li>
+                        <li>
+                            <a href="{{url('myAdmin/resourceTypes')}}"><i class="fa fa-edit fa-fw"></i> Resource Tyes</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
