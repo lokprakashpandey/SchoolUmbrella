@@ -267,7 +267,7 @@
                 <div class="modal-body">
 
                 {!!Form::open(array('url'=>"example",'method' => 'post'))!!}
-                  {!! $captchaHtml !!}
+                  {!! $captchaHtml!!}
                   
                   <input type="text" id="CaptchaCode" name="CaptchaCode">
                   <button type="submit">Submit</button>

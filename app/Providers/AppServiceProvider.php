@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 // Importing the BotDetectCaptcha class
 use LaravelCaptcha\Integration\BotDetectCaptcha;
-
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
 
         $captcha = BotDetectCaptcha::GetCaptchaInstance($captchaConfig);
 
-         view()->share('captchaHtml', $captcha->Html());
+        View::share('captchaHtml', $captcha->Html());
         //
        // view()->share('captchaHtml', $captcha->Html());
     }
